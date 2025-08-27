@@ -1,8 +1,70 @@
-<nav class="navbar">
-  <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">HOME</a>
-  <a routerLink="about" routerLinkActive="active">ABOUT</a>
-  <a routerLink="projects" routerLinkActive="active">PROJECTS</a>
-  <a routerLink="contact" routerLinkActive="active">CONTACT</a>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags, title, etc. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemil</title>
 
-<router-outlet></router-outlet>
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <!-- Add your other stylesheets or links here -->
+</head>
+<body>
+
+  <!-- Navbar and other content -->
+  <nav class="navbar">
+    <!-- Navbar Brand -->
+    <div class="navbar-brand-container">
+      <a class="navbar-brand" href="#">Gemil</a>
+    </div>
+
+    <!-- Centered Navbar Links -->
+    <div class="navbar-links">
+      <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">HOME</a>
+      <a routerLink="about" routerLinkActive="active">ABOUT</a>
+      <a routerLink="projects" routerLinkActive="active">PROJECTS</a>
+      <a routerLink="contact" routerLinkActive="active">CONTACT</a>
+    </div>
+
+    <!-- Right Side: Social Media Icons & Dark Mode Toggle -->
+    <div class="navbar-right">
+      <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+
+      <!-- Dark Mode Toggle -->
+      <button id="darkModeToggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+
+  <!-- Add your other scripts here (like JS for dark mode functionality) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const darkModeToggle = document.getElementById("darkModeToggle");
+
+      // Check if dark mode is enabled from localStorage
+      if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+      }
+
+      // Toggle Dark Mode
+      darkModeToggle.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+
+        // Save the dark mode preference in localStorage
+        if (document.body.classList.contains("dark-mode")) {
+          localStorage.setItem("darkMode", "enabled");
+        } else {
+          localStorage.setItem("darkMode", "disabled");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
