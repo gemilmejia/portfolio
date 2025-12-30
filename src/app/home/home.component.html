@@ -17,11 +17,11 @@
 
       <div class="mt-4 hero-buttons">
         <button class="btn btn-dark">
-          <i class="bi bi-discord"></i> Join my Discord Community
+          <i class="bi bi-discord"></i> Get in Touch
         </button>
-        <button class="btn btn-light border">
-          <i class="bi bi-calendar-event"></i> Book a Meeting
-        </button>
+        <a class="btn btn-light border" [routerLink]="[]" fragment="about">
+          <i class="bi bi-calendar-event"></i> View My Work
+        </a>
       </div>
     </div>
 
@@ -33,5 +33,35 @@
       />
     </div>
 
+  </div>
+</section>
+
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="h1">About</div>
+    <p class="p1">Hello! I'm a Aspiring Developer specializing in developing solutions with Javascript, Angular, and PHP.</p>
+    <p class="p2">'I work on project including website and graphic design. I used to be a technical support from my previous company.
+    I've helped small and medium department or divisions either hardware or software and small coding like using appscript for regenerating and getting a report and creating first time porfolio.
+
+    When I'm not coding, I enjoy reading and learning other programming languages that i can use, and watching short videos regarding programming and apply it to my website.
+
+    - Technology Stack: (React), Next , Bootstrap, tailwind, (Firebase), Laravel, MySQL, (MongoDB), (GraphQL), (Azure), (docker), Figma.
+    '</p>
+  </div>
+</section>
+
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="h1">Projects</div>
+    <p>projects works!</p>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="h1">Contact</div>
+    <p class="p1">Let’s connect and start the conversation.</p>
+    <p class="p2">Feel free to send me an email(linked), and I’ll get back to you as soon as possible.
+    </p>
   </div>
 </section>

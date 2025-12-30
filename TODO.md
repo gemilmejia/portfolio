@@ -1,0 +1,5 @@
+- [x] Modify home.component.html to add sections for about, projects, contact with IDs and content
+- [x] Update app.component.html navbar to use routerLink="" with fragments
+- [x] Add smooth scrolling CSS to src/styles.scss
+- [x] Add scroll link in home component (View My Work button)
+- [x] Test the scrolling functionality
