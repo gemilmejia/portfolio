@@ -1,13 +1,28 @@
 import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+interface ContactForm {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule],
+  imports: [RouterModule, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+
+  contact: ContactForm = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  };
 
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
@@ -87,6 +102,22 @@ export class HomeComponent implements OnInit {
   private isElementInViewport(el: HTMLElement): boolean {
     const rect = el.getBoundingClientRect();
     return rect.top < window.innerHeight && rect.bottom > 0;
+  }
+
+  onSubmit(form: any): void {
+    if (form.valid) {
+      // Here you would typically send the form data to a backend service
+      console.log('Form submitted:', this.contact);
+      alert('Thank you for your message! I will get back to you soon.');
+      // Reset the form
+      this.contact = {
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      };
+      form.resetForm();
+    }
   }
 
 }

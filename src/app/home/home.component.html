@@ -82,17 +82,193 @@
 
 <section id="projects" class="projects-section">
   <div class="container">
-    <div class="h1">Projects</div>
-    <p>projects works!</p>
+    <h1>My Projects</h1>
+    <p>Here are some of the projects I've worked on, showcasing my skills in web development and software solutions.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/images/project1.jpg" alt="Portfolio Website" />
+        </div>
+        <h3>Personal Portfolio Website</h3>
+        <p>A responsive personal portfolio built with Angular, featuring smooth scrolling navigation, dark mode toggle, and interactive animations. Includes sections for about, projects, and contact information.</p>
+        <div class="project-tech">
+          <span>Angular</span>
+          <span>TypeScript</span>
+          <span>SCSS</span>
+          <span>Bootstrap</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/images/project2.jpg" alt="E-commerce Platform" />
+        </div>
+        <h3>E-commerce Platform</h3>
+        <p>A full-stack e-commerce solution with user authentication, product management, shopping cart functionality, and payment integration using Stripe. Features include product search, filtering, and order tracking.</p>
+        <div class="project-tech">
+          <span>React</span>
+          <span>Node.js</span>
+          <span>MongoDB</span>
+          <span>Express</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/images/project3.jpg" alt="Task Management App" />
+        </div>
+        <h3>Task Management App</h3>
+        <p>A collaborative task management application with real-time updates, team collaboration features, and drag-and-drop functionality. Includes user authentication, project boards, and progress tracking.</p>
+        <div class="project-tech">
+          <span>Vue.js</span>
+          <span>Firebase</span>
+          <span>Tailwind CSS</span>
+          <span>Vuex</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/images/project4.jpg" alt="Weather Dashboard" />
+        </div>
+        <h3>Weather Dashboard</h3>
+        <p>An interactive weather dashboard that displays current weather conditions and forecasts for multiple cities. Built with JavaScript, it integrates with a weather API to provide real-time data visualization and location-based weather updates.</p>
+        <div class="project-tech">
+          <span>JavaScript</span>
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>OpenWeatherMap API</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/images/project5.jpg" alt="Blog Platform" />
+        </div>
+        <h3>Blog Platform</h3>
+        <p>A full-featured blog platform with user authentication, content management system, and commenting functionality. Includes rich text editing, category organization, and SEO optimization for better search engine visibility.</p>
+        <div class="project-tech">
+          <span>PHP</span>
+          <span>Laravel</span>
+          <span>MySQL</span>
+          <span>Bootstrap</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="assets/images/project6.jpg" alt="Data Visualization Tool" />
+        </div>
+        <h3>Data Visualization Tool</h3>
+        <p>A web-based data visualization tool that allows users to upload CSV files and create interactive charts and graphs. Features include multiple chart types, data filtering, and export functionality for presentations and reports.</p>
+        <div class="project-tech">
+          <span>Python</span>
+          <span>Flask</span>
+          <span>D3.js</span>
+          <span>Pandas</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section" aria-labelledby="contact-heading">
   <div class="container">
-    <div class="h1">Contact</div>
-    <p class="p1">Let’s connect and start the conversation.</p>
-    <p class="p2">Feel free to send me an email(linked), and I’ll get back to you as soon as possible.
-    </p>
+    <div class="contact-content">
+      <h2 id="contact-heading" class="contact-title">Get In Touch</h2>
+      <p class="contact-subtitle">Let's connect and start the conversation.</p>
+      <p class="contact-description">Feel free to send me a message, and I'll get back to you as soon as possible.</p>
+
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="contact-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="contact.name"
+            required
+            #name="ngModel"
+            class="form-input"
+            placeholder="Your full name"
+          />
+          <div *ngIf="name.invalid && name.touched" class="error-message">Name is required.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="contact.email"
+            required
+            email
+            #email="ngModel"
+            class="form-input"
+            placeholder="your.email@example.com"
+          />
+          <div *ngIf="email.invalid && email.touched" class="error-message">
+            <span *ngIf="email.errors?.['required']">Email is required.</span>
+            <span *ngIf="email.errors?.['email']">Please enter a valid email address.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject" class="form-label">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            [(ngModel)]="contact.subject"
+            required
+            #subject="ngModel"
+            class="form-input"
+            placeholder="What's this about?"
+          />
+          <div *ngIf="subject.invalid && subject.touched" class="error-message">Subject is required.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            [(ngModel)]="contact.message"
+            required
+            #message="ngModel"
+            class="form-textarea"
+            placeholder="Your message here..."
+            rows="5"
+          ></textarea>
+          <div *ngIf="message.invalid && message.touched" class="error-message">Message is required.</div>
+        </div>
+
+        <button type="submit" [disabled]="contactForm.invalid" class="contact-submit-btn">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          Send Message
+        </button>
+      </form>
+    </div>
   </div>
 </section>
 
