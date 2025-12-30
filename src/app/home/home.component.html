@@ -1,4 +1,33 @@
-<section class="hero-section">
+<!-- Navbar -->
+<nav class="navbar">
+  <!-- Brand -->
+  <div class="navbar-brand-container">
+    <a class="navbar-brand" href="#">Gemil Mejia</a>
+    <br>&nbsp;&nbsp;<span>Software - Developer</span>
+  </div>
+
+  <!-- Center Links -->
+  <div class="navbar-links ">
+    <a href="#" (click)="scrollToSection('hero')">HOME</a>
+    <a href="#" (click)="scrollToSection('about')">ABOUT</a>
+    <a href="#" (click)="scrollToSection('projects')">PROJECTS</a>
+    <a href="#" (click)="scrollToSection('contact')">CONTACT</a>
+  </div>
+
+  <!-- Right Side -->
+  <div class="navbar-right">
+    <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+    <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+
+    <!-- Dark Mode Button -->
+    <button id="darkModeToggle" class="dark-mode-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+</nav>
+
+<section id="hero" class="hero-section">
   <div class="hero-container">
 
     <!-- LEFT: TEXT -->
@@ -19,7 +48,7 @@
         <button class="btn btn-dark">
           <i class="bi bi-discord"></i> Get in Touch
         </button>
-        <a class="btn btn-light border" [routerLink]="[]" fragment="about">
+        <a class="btn btn-light border" href="#" (click)="scrollToSection('about')">
           <i class="bi bi-calendar-event"></i> View My Work
         </a>
       </div>
@@ -65,3 +94,8 @@
     </p>
   </div>
 </section>
+
+<!-- Back to Top Button -->
+<button id="backToTopBtn" class="back-to-top-btn" (click)="scrollToTop()">
+  <i class="fas fa-arrow-up"></i> Back to Top
+</button>

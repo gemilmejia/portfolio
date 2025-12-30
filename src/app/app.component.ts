@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,8 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'my-portfolio';
   isDarkMode: boolean = false;  // Declare the dark mode property
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     // Ensure localStorage is accessed only in the browser
@@ -34,5 +36,14 @@ export class AppComponent implements OnInit {
         localStorage.setItem('darkMode', 'disabled');
       }
     }
+  }
+
+  scrollToSection(fragment: string): void {
+    this.router.navigate([], { fragment }).then(() => {
+      const element = document.getElementById(fragment);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   }
 }
