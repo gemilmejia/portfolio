@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -9,10 +9,15 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
+
   ngOnInit(): void {
     // Ensure localStorage is accessed only in the browser
     if (typeof window !== 'undefined' && localStorage.getItem('darkMode') === 'enabled') {
-      document.body.classList.add('dark-mode');
+      this.renderer.addClass(this.el.nativeElement, 'dark-mode');
+      this.updateDarkModeIcon(true);
+    } else {
+      this.updateDarkModeIcon(false);
     }
     this.setupScrollListener();
   }
@@ -25,12 +30,29 @@ export class HomeComponent implements OnInit {
   }
 
   toggleDarkMode(): void {
-    document.body.classList.toggle('dark-mode');
-    if (typeof window !== 'undefined') {
-      if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('darkMode', 'enabled');
-      } else {
+    const isDarkMode = this.el.nativeElement.classList.contains('dark-mode');
+    if (isDarkMode) {
+      this.renderer.removeClass(this.el.nativeElement, 'dark-mode');
+      if (typeof window !== 'undefined') {
         localStorage.setItem('darkMode', 'disabled');
+      }
+      this.updateDarkModeIcon(false);
+    } else {
+      this.renderer.addClass(this.el.nativeElement, 'dark-mode');
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('darkMode', 'enabled');
+      }
+      this.updateDarkModeIcon(true);
+    }
+  }
+
+  private updateDarkModeIcon(isDarkMode: boolean): void {
+    const icon = document.querySelector('#darkModeToggle i');
+    if (icon) {
+      if (isDarkMode) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
       }
     }
   }

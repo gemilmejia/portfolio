@@ -8,10 +8,10 @@
 
   <!-- Center Links -->
   <div class="navbar-links ">
-    <a href="#" (click)="scrollToSection('hero')">HOME</a>
-    <a href="#" (click)="scrollToSection('about')">ABOUT</a>
-    <a href="#" (click)="scrollToSection('projects')">PROJECTS</a>
-    <a href="#" (click)="scrollToSection('contact')">CONTACT</a>
+    <a href="#" (click)="scrollToSection('hero'); $event.preventDefault()">HOME</a>
+    <a href="#" (click)="scrollToSection('about'); $event.preventDefault()">ABOUT</a>
+    <a href="#" (click)="scrollToSection('projects'); $event.preventDefault()">PROJECTS</a>
+    <a href="#" (click)="scrollToSection('contact'); $event.preventDefault()">CONTACT</a>
   </div>
 
   <!-- Right Side -->
@@ -21,7 +21,7 @@
     <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
 
     <!-- Dark Mode Button -->
-    <button id="darkModeToggle" class="dark-mode-toggle">
+    <button id="darkModeToggle" class="dark-mode-toggle" (click)="toggleDarkMode()">
       <i class="fas fa-moon"></i>
     </button>
   </div>
