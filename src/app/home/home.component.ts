@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 interface ContactForm {
   name: string;
@@ -11,7 +12,7 @@ interface ContactForm {
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, FormsModule],
+  imports: [RouterModule, FormsModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -38,6 +39,7 @@ export class HomeComponent implements OnInit {
   }
 
   scrollToSection(sectionId: string): void {
+    if (typeof document === 'undefined') return;
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -62,6 +64,7 @@ export class HomeComponent implements OnInit {
   }
 
   private updateDarkModeIcon(isDarkMode: boolean): void {
+    if (typeof document === 'undefined') return;
     const icon = document.querySelector('#darkModeToggle i');
     if (icon) {
       if (isDarkMode) {
@@ -73,7 +76,9 @@ export class HomeComponent implements OnInit {
   }
 
   scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   setupScrollListener(): void {
@@ -106,10 +111,8 @@ export class HomeComponent implements OnInit {
 
   onSubmit(form: any): void {
     if (form.valid) {
-      // Here you would typically send the form data to a backend service
       console.log('Form submitted:', this.contact);
       alert('Thank you for your message! I will get back to you soon.');
-      // Reset the form
       this.contact = {
         name: '',
         email: '',
