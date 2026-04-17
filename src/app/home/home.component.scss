@@ -319,6 +319,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: center;
 }
 .project-tech span {
   background: var(--accent-blue);
@@ -343,11 +344,115 @@
   text-decoration: none;
   font-size: 0.85rem;
   transition: 0.3s;
+  justify-content: center;
 }
 
 .project-link:hover {
   background: #007bff;
   color: #fff;
+}
+
+.design-section {
+  background: var(--bg-about);
+}
+
+.design-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: var(--bg-glass);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px var(--shadow-main);
+}
+
+.design-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-h1);
+}
+
+.design-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--text-p);
+  text-align: center;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.design-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 10px 25px var(--shadow-main);
+  transition: var(--transition);
+  border: 1px solid var(--border-main);
+}
+
+.design-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px var(--shadow-hover);
+}
+
+.design-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.design-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.design-card:hover .design-image img {
+  transform: scale(1.06);
+}
+
+.design-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.5rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.62) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.design-card:hover .design-overlay {
+  opacity: 1;
+}
+
+.design-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.25rem 1.5rem 0.75rem;
+  color: var(--text-h1);
+}
+
+.design-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 1.5rem 1.5rem;
+  color: var(--text-muted);
 }
 
 /* CONTACT */
