@@ -2,6 +2,11 @@ import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HeroComponent } from '../hero/hero.component';
+import { AboutComponent } from '../about/about.component';
+import { ProjectsComponent } from '../projects/projects.component';
+import { DesignComponent } from '../design';
+import { ContactComponent } from '../contact/contact.component';
 
 interface ContactForm {
   name: string;
@@ -12,24 +17,39 @@ interface ContactForm {
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, FormsModule, CommonModule],
+  standalone: true,
+  imports: [
+    RouterModule,
+    FormsModule,
+    CommonModule,
+    HeroComponent,
+    AboutComponent,
+    ProjectsComponent,
+    DesignComponent,
+    ContactComponent,
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
   contact: ContactForm = {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   };
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+  ) {}
 
   ngOnInit(): void {
     // Ensure localStorage is accessed only in the browser
-    if (typeof window !== 'undefined' && localStorage.getItem('darkMode') === 'enabled') {
+    if (
+      typeof window !== 'undefined' &&
+      localStorage.getItem('darkMode') === 'enabled'
+    ) {
       this.renderer.addClass(this.el.nativeElement, 'dark-mode');
       this.updateDarkModeIcon(true);
     } else {
@@ -90,9 +110,12 @@ export class HomeComponent implements OnInit {
         const backToTopBtn = document.getElementById('backToTopBtn');
 
         if (backToTopBtn) {
-          const isInAbout = aboutSection && this.isElementInViewport(aboutSection);
-          const isInProjects = projectsSection && this.isElementInViewport(projectsSection);
-          const isInContact = contactSection && this.isElementInViewport(contactSection);
+          const isInAbout =
+            aboutSection && this.isElementInViewport(aboutSection);
+          const isInProjects =
+            projectsSection && this.isElementInViewport(projectsSection);
+          const isInContact =
+            contactSection && this.isElementInViewport(contactSection);
 
           if (isInAbout || isInProjects || isInContact) {
             backToTopBtn.classList.add('show');
@@ -117,10 +140,9 @@ export class HomeComponent implements OnInit {
         name: '',
         email: '',
         subject: '',
-        message: ''
+        message: '',
       };
       form.resetForm();
     }
   }
-
 }
