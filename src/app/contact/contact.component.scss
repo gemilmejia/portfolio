@@ -1,20 +1,194 @@
-.container
-{
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* Easy CSS Variables for Light/Dark Mode - Change colors here! */
+:host {
+  /* === LIGHT MODE (Default) === */
+  --bg-hero: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --bg-about: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --bg-projects: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+  --bg-contact: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+  --bg-list: #ffffff;
+  --bg-input: #fafbfc;
+  --text-h1: #333333;
+  --text-h3: #333333;
+  --text-p: #555555;
+  --text-muted: #666666;
+  --text-label: #2c3e50;
+  --border-main: #e9ecef;
+  --border-input: #e1e8ed;
+  --border-navbar: #dddddd;
+  --accent-blue: #007bff;
+  --accent-blue-dark: #0056b3;
+  --shadow-main: rgba(0, 0, 0, 0.1);
+  --shadow-card: rgba(0, 0, 0, 0.05);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --btn-dark-bg: linear-gradient(135deg, #333333, #555555);
+  --btn-dark-hover: linear-gradient(135deg, #555555, #777777);
+  --btn-submit: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  --btn-submit-hover: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+  --error-color: #e74c3c;
 
+  /* Shared */
+  --transition: all 0.3s ease;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-pill: 50px;
+}
+
+/* === DARK MODE OVERRIDES === */
+:host(.dark-mode) {
+  --bg-hero: #121212;
+  --bg-about: #1a1a1a;
+  --bg-projects: #242424;
+  --bg-contact: #1a1a1a;
+  --bg-card: #2d2d2d;
+  --bg-glass: rgba(45, 45, 45, 0.95);
+  --bg-list: #363636;
+  --bg-input: #3a3a3a;
+  --text-h1: #f1f1f1;
+  --text-h3: #e0e0e0;
+  --text-p: #cccccc;
+  --text-muted: #bbbbbb;
+  --text-label: #ecf0f1;
+  --border-main: #444444;
+  --border-input: #555555;
+  --border-navbar: #444444;
+  --shadow-main: rgba(0, 0, 0, 0.4);
+  --shadow-card: rgba(0, 0, 0, 0.2);
+  --shadow-hover: rgba(0, 0, 0, 0.5);
+  --btn-dark-bg: linear-gradient(135deg, #4a4a4a, #666666);
+  --btn-dark-hover: linear-gradient(135deg, #666666, #888888);
+}
+
+/* Apply background to sections */
+.contact-section {
+  background: var(--bg-contact);
+}
+
+.contact-section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
 
-.h1{
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 100px ;
+.contact-section .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.contact-content {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  padding: 3rem;
+  box-shadow: 0 4px 20px var(--shadow-main);
+  border: 1px solid var(--border-main);
+}
+.contact-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-h1);
+}
+.contact-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: var(--text-p);
+}
+.contact-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: var(--text-muted);
+}
+
+/* CONTACT FORM */
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form-group {
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+.form-label {
+  display: block;
+  margin-bottom: 0.625rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-label);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--border-input);
+  border-radius: var(--radius-card);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+  background: var(--bg-input);
+  color: var(--text-label);
+  line-height: 1.5;
+}
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-muted);
   font-style: italic;
-  font: bold;
+}
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+  transform: translateY(-1px);
+}
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+  padding-top: 1rem;
+}
+.form-input:hover,
+.form-textarea:hover {
+  border-color: var(--border-main);
+}
+.error-message {
+  color: var(--error-color);
+  font-size: 0.85rem;
 }
 
-
+.contact-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--btn-submit);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-btn);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.contact-submit-btn:hover {
+  background: var(--btn-submit-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+.contact-submit-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
