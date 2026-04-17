@@ -1,0 +1,164 @@
+/* Easy CSS Variables for Light/Dark Mode - Change colors here! */
+:host {
+  /* === LIGHT MODE (Default) === */
+  --bg-hero: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --bg-about: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --bg-projects: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+  --bg-contact: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+  --bg-list: #ffffff;
+  --bg-input: #fafbfc;
+  --text-h1: #333333;
+  --text-h3: #333333;
+  --text-p: #555555;
+  --text-muted: #666666;
+  --text-label: #2c3e50;
+  --border-main: #e9ecef;
+  --border-input: #e1e8ed;
+  --border-navbar: #dddddd;
+  --accent-blue: #007bff;
+  --accent-blue-dark: #0056b3;
+  --shadow-main: rgba(0, 0, 0, 0.1);
+  --shadow-card: rgba(0, 0, 0, 0.05);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --btn-dark-bg: linear-gradient(135deg, #333333, #555555);
+  --btn-dark-hover: linear-gradient(135deg, #555555, #777777);
+  --btn-submit: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  --btn-submit-hover: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+  --error-color: #e74c3c;
+
+  /* Shared */
+  --transition: all 0.3s ease;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-pill: 50px;
+}
+
+/* === DARK MODE OVERRIDES === */
+:host(.dark-mode) {
+  --bg-hero: #121212;
+  --bg-about: #1a1a1a;
+  --bg-projects: #242424;
+  --bg-contact: #1a1a1a;
+  --bg-card: #2d2d2d;
+  --bg-glass: rgba(45, 45, 45, 0.95);
+  --bg-list: #363636;
+  --bg-input: #3a3a3a;
+  --text-h1: #f1f1f1;
+  --text-h3: #e0e0e0;
+  --text-p: #cccccc;
+  --text-muted: #bbbbbb;
+  --text-label: #ecf0f1;
+  --border-main: #444444;
+  --border-input: #555555;
+  --border-navbar: #444444;
+  --shadow-main: rgba(0, 0, 0, 0.4);
+  --shadow-card: rgba(0, 0, 0, 0.2);
+  --shadow-hover: rgba(0, 0, 0, 0.5);
+  --btn-dark-bg: linear-gradient(135deg, #4a4a4a, #666666);
+  --btn-dark-hover: linear-gradient(135deg, #666666, #888888);
+}
+
+/* Apply background to sections */
+.hero-section {
+  background: var(--bg-hero);
+}
+
+.hero-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+/* MAIN CONTAINER */
+.hero-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* HERO TEXT & IMAGE */
+:host(.dark-mode) .hero-text {
+  color: #ffffff !important;
+}
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.hero-image img {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1rem var(--shadow-main);
+}
+
+/* HERO BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.hero-buttons .btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px var(--shadow-main);
+  border: 2px solid transparent;
+}
+.hero-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-hover);
+}
+.hero-buttons .btn-dark {
+  background: var(--btn-dark-bg);
+  color: #fff;
+  border-color: #333;
+}
+.hero-buttons .btn-dark:hover {
+  background: var(--btn-dark-hover);
+  border-color: #555;
+}
+.hero-buttons .btn-light {
+  background: var(--bg-card);
+  color: var(--text-h1);
+  border-color: var(--text-h1);
+}
+.hero-buttons .btn-light:hover {
+  background: var(--bg-glass);
+  color: var(--text-h1);
+  border-color: var(--text-h1);
+}
+
+/* RESPONSIVE HERO */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text {
+    text-align: center;
+  }
+  .hero-image {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .hero-buttons {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
