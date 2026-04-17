@@ -3,25 +3,47 @@
   <!-- Brand -->
   <div class="navbar-brand-container">
     <a class="navbar-brand" href="#">Gemil Mejia</a>
-    <br>&nbsp;&nbsp;<span>Software - Developer</span>
+    <br />&nbsp;&nbsp;<span>Software - Developer</span>
   </div>
 
   <!-- Center Links -->
-  <div class="navbar-links ">
-    <a href="#" (click)="scrollToSection('hero'); $event.preventDefault()">HOME</a>
-    <a href="#" (click)="scrollToSection('about'); $event.preventDefault()">ABOUT</a>
-    <a href="#" (click)="scrollToSection('projects'); $event.preventDefault()">PROJECTS</a>
-    <a href="#" (click)="scrollToSection('contact'); $event.preventDefault()">CONTACT</a>
+  <div class="navbar-links">
+    <a href="#" (click)="scrollToSection('hero'); $event.preventDefault()"
+      >HOME</a
+    >
+    <a href="#" (click)="scrollToSection('about'); $event.preventDefault()"
+      >ABOUT</a
+    >
+    <a href="#" (click)="scrollToSection('projects'); $event.preventDefault()"
+      >PROJECTS</a
+    >
+    <a href="#" (click)="scrollToSection('contact'); $event.preventDefault()"
+      >CONTACT</a
+    >
   </div>
 
   <!-- Right Side -->
   <div class="navbar-right">
-    <a href="https://www.instagram.com/mejiagemil_/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <a
+      href="https://www.instagram.com/mejiagemil_/"
+      target="_blank"
+      class="social-icon"
+      ><i class="fab fa-instagram"></i
+    ></a>
     <!-- <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a> -->
-    <a href="https://www.linkedin.com/in/gemil-m-365346217/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    <a
+      href="https://www.linkedin.com/in/gemil-m-365346217/"
+      target="_blank"
+      class="social-icon"
+      ><i class="fab fa-linkedin"></i
+    ></a>
 
     <!-- Dark Mode Button -->
-    <button id="darkModeToggle" class="dark-mode-toggle" (click)="toggleDarkMode()">
+    <button
+      id="darkModeToggle"
+      class="dark-mode-toggle"
+      (click)="toggleDarkMode()"
+    >
       <i class="fas fa-moon"></i>
     </button>
   </div>
@@ -29,11 +51,10 @@
 
 <section id="hero" class="hero-section">
   <div class="hero-container">
-
     <!-- LEFT: TEXT -->
     <div class="hero-text">
       <h1 class="fw-bold">
-        Aspiring Software and <br>
+        Aspiring Software and <br />
         Web <span class="fw-normal">Developer</span>
       </h1>
 
@@ -49,7 +70,11 @@
         <button class="btn btn-dark">
           <i class="bi bi-discord"></i> Get in Touch
         </button>
-        <a class="btn btn-light border" href="#" (click)="scrollToSection('about')">
+        <a
+          class="btn btn-light border"
+          href="#"
+          (click)="scrollToSection('about')"
+        >
           <i class="bi bi-calendar-event"></i> View My Work
         </a>
       </div>
@@ -57,54 +82,69 @@
 
     <!-- RIGHT: IMAGE -->
     <div class="hero-image">
-      <img
-        src="assets/images/profile.jpg"
-        alt="Profile"
-      />
+      <img src="assets/images/profile.jpg" alt="Profile" />
     </div>
-
   </div>
 </section>
 
 <section id="about" class="about-section">
   <div class="container">
     <h1>About Me</h1>
-    <p>Hello! I'm an aspiring software developer specializing in creating innovative solutions with JavaScript, Angular, and PHP. With a background in technical support, I've assisted small and medium-sized departments with hardware and software troubleshooting, and I've developed automation scripts for reporting and portfolio creation.</p>
-    <p>When I'm not coding, I enjoy exploring new programming languages, watching educational videos, and applying fresh insights to enhance my projects and skills.</p>
+    <p>
+      Hello! I'm an aspiring software developer specializing in creating
+      innovative solutions with JavaScript, Angular, and PHP. With a background
+      in technical support, I've assisted small and medium-sized departments
+      with hardware and software troubleshooting, and I've developed automation
+      scripts for reporting and portfolio creation.
+    </p>
+    <p>
+      When I'm not coding, I enjoy exploring new programming languages, watching
+      educational videos, and applying fresh insights to enhance my projects and
+      skills.
+    </p>
     <h3>Technology Stack</h3>
     <ul>
       <li><strong>Frontend:</strong> Angular, Bootstrap, Tailwind CSS</li>
-      <li><strong>Backend:</strong> Laravel, Javascript, PHP, C#, Python, ASP.Net <!--, Node.js, Express.js--> </li>
+      <li>
+        <strong>Backend:</strong> Laravel, Javascript, PHP, C#, Python, ASP.Net
+        <!--, Node.js, Express.js-->
+      </li>
       <li><strong>Databases:</strong> MySQL, SQL Server Management Studio</li>
       <!-- <li><strong>Other Tools:</strong> Firebase, GraphQL, Azure, Docker, Figma</li> -->
     </ul>
   </div>
 </section>
 
-
 <section id="projects" class="projects-section">
   <div class="container">
     <h1>My Projects</h1>
-    <p>Here are some of the projects I've worked on, showcasing my skills in web development and software solutions.</p>
+    <p>
+      Here are some of the projects I've worked on, showcasing my skills in web
+      development and software solutions.
+    </p>
     <div class="projects-grid">
       <div class="project-card">
         <div class="project-image">
-          <img src="assets/images/project1.jpg" alt="Portfolio Website" />
+          <img src="assets/images/project1.jpg" alt="TUP Compass" />
         </div>
-        <h3>Personal Portfolio Website</h3>
-        <p>A responsive personal portfolio built with Angular, featuring smooth scrolling navigation, dark mode toggle, and interactive animations. Includes sections for about, projects, and contact information.</p>
+        <h3>TUP Compass Website</h3>
+        <p>
+          A responsive organizational website for TUP COMPASS, built using HTML,
+          CSS, JavaScript, PHP, and MySQL, designed to deliver accessible
+          information and a seamless user experience across devices.
+        </p>
         <div class="project-tech">
-          <span>Angular</span>
-          <span>TypeScript</span>
-          <span>SCSS</span>
-          <span>Bootstrap</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Javascript</span>
+          <span>PHP</span>
+          <span>MySQL</span>
         </div>
         <div class="project-links">
           <a href="#" class="project-link">Live Demo</a>
           <a href="#" class="project-link">GitHub</a>
         </div>
       </div>
-
 
       <!-- <div class="project-card">
         <div class="project-image">
@@ -203,16 +243,21 @@
   </div>
 </section>
 
-
-
 <section id="contact" class="contact-section" aria-labelledby="contact-heading">
   <div class="container">
     <div class="contact-content">
       <h2 id="contact-heading" class="contact-title">Get In Touch</h2>
       <p class="contact-subtitle">Let's connect and start the conversation.</p>
-      <p class="contact-description">Feel free to send me a message, and I'll get back to you as soon as possible.</p>
+      <p class="contact-description">
+        Feel free to send me a message, and I'll get back to you as soon as
+        possible.
+      </p>
 
-      <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="contact-form">
+      <form
+        #contactForm="ngForm"
+        (ngSubmit)="onSubmit(contactForm)"
+        class="contact-form"
+      >
         <div class="form-group">
           <label for="name" class="form-label">Name</label>
           <input
@@ -225,7 +270,9 @@
             class="form-input"
             placeholder="Your full name"
           />
-          <div *ngIf="name.invalid && name.touched" class="error-message">Name is required.</div>
+          <div *ngIf="name.invalid && name.touched" class="error-message">
+            Name is required.
+          </div>
         </div>
 
         <div class="form-group">
@@ -243,7 +290,9 @@
           />
           <div *ngIf="email.invalid && email.touched" class="error-message">
             <span *ngIf="email.errors?.['required']">Email is required.</span>
-            <span *ngIf="email.errors?.['email']">Please enter a valid email address.</span>
+            <span *ngIf="email.errors?.['email']"
+              >Please enter a valid email address.</span
+            >
           </div>
         </div>
 
@@ -259,7 +308,9 @@
             class="form-input"
             placeholder="What's this about?"
           />
-          <div *ngIf="subject.invalid && subject.touched" class="error-message">Subject is required.</div>
+          <div *ngIf="subject.invalid && subject.touched" class="error-message">
+            Subject is required.
+          </div>
         </div>
 
         <div class="form-group">
@@ -274,10 +325,16 @@
             placeholder="Your message here..."
             rows="5"
           ></textarea>
-          <div *ngIf="message.invalid && message.touched" class="error-message">Message is required.</div>
+          <div *ngIf="message.invalid && message.touched" class="error-message">
+            Message is required.
+          </div>
         </div>
 
-        <button type="submit" [disabled]="contactForm.invalid" class="contact-submit-btn">
+        <button
+          type="submit"
+          [disabled]="contactForm.invalid"
+          class="contact-submit-btn"
+        >
           <i class="fas fa-paper-plane" aria-hidden="true"></i>
           Send Message
         </button>
