@@ -1,22 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/router';
+import {
+  RouterOutlet,
+  RouterLink,
+  RouterLinkActive,
+  Router,
+} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet], // i remove RouterLink, RouterLinkActive //
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   title = 'my-portfolio';
-  isDarkMode: boolean = false;  // Declare the dark mode property
+  isDarkMode: boolean = false; // Declare the dark mode property
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
     // Ensure localStorage is accessed only in the browser
-    if (typeof window !== 'undefined' && localStorage.getItem('darkMode') === 'enabled') {
+    if (
+      typeof window !== 'undefined' &&
+      localStorage.getItem('darkMode') === 'enabled'
+    ) {
       this.isDarkMode = true;
       document.body.classList.add('dark-mode');
     }
