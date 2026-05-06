@@ -1,123 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Meta tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gemil</title>
+<!-- Angular app layout (dark/light is handled by body.dark-mode + CSS variables in styles.scss) -->
+<h1 style="display:none">Hello, my-portfolio</h1>
 
-  <!-- Font Awesome CDN (fixed) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<nav class="navbar">
+  <!-- Brand -->
+  <div class="navbar-brand-container">
+    <a class="navbar-brand" href="#">Gemil Mejia</a>
+    <br />&nbsp;&nbsp;<span>Software - Developer</span>
+  </div>
 
-  <!-- Custom Styles -->
-  <style>
-    /* Reset */
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      transition: background 0.3s, color 0.3s;
-    }
+  <!-- Center Links -->
+  <div class="navbar-links">
+    <a href="#" (click)="scrollToSection('hero'); $event.preventDefault()">HOME</a>
+    <a href="#" (click)="scrollToSection('about'); $event.preventDefault()">ABOUT</a>
+    <a href="#" (click)="scrollToSection('projects'); $event.preventDefault()">PROJECTS</a>
+    <a href="#" (click)="scrollToSection('design'); $event.preventDefault()">DESIGN WORK</a>
+    <a href="#" (click)="scrollToSection('contact'); $event.preventDefault()">CONTACT</a>
+  </div>
 
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 250px;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-    }
+  <!-- Right Side -->
+  <div class="navbar-right">
+    <a href="https://www.instagram.com/mejiagemil_/" target="_blank" class="social-icon">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/gemil-m-365346217/" target="_blank" class="social-icon">
+      <i class="fab fa-linkedin"></i>
+    </a>
 
-    .navbar a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
+    <!-- Dark Mode Button -->
+    <button id="darkModeToggle" class="dark-mode-toggle" (click)="toggleDarkMode()">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+</nav>
 
-    .navbar a.active {
-      border-bottom: 2px solid #007bff;
-    }
+<app-hero (scrollToSection)="scrollToSection($event)"></app-hero>
+<app-about></app-about>
+<app-projects></app-projects>
+<app-design></app-design>
+<app-contact [contact]="contact" (submitForm)="onSubmit($event)"></app-contact>
 
-    .navbar-right {
-      display: flex;
-      align-items: center;
-    }
-
-    .social-icon {
-      margin: 0 8px;
-      color: #333;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-
-    .social-icon:hover {
-      color: #007bff;
-    }
-
-    .dark-mode-toggle {
-      margin-left: 15px;
-      background: none;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-      color: #333;
-    }
-
-    /* Dark Mode */
-    .dark-mode {
-      background: #121212;
-      color: #f1f1f1;
-    }
-
-    .dark-mode .navbar {
-      background: #1e1e1e;
-      border-bottom: 1px solid #444;
-    }
-
-    .dark-mode .navbar a {
-      color: #f1f1f1;
-    }
-
-    .dark-mode .social-icon,
-    .dark-mode .dark-mode-toggle {
-      color: #f1f1f1;
-    }
-  </style>
-</head>
-<body>
+<!-- Back to Top Button -->
+<button id="backToTopBtn" class="back-to-top-btn" (click)="scrollToTop()">
+  <i class="fas fa-arrow-up"></i> Back to Top
+</button>
 
 
-
-  <!-- Angular Router Outlet -->
-  <router-outlet></router-outlet>
-
-  <!-- Dark Mode Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const darkModeToggle = document.getElementById("darkModeToggle");
-      const icon = darkModeToggle.querySelector("i");
-
-      // Load preference
-      if (localStorage.getItem("darkMode") === "enabled") {
-        document.body.classList.add("dark-mode");
-        icon.classList.replace("fa-moon", "fa-sun");
-      }
-
-      // Toggle Dark Mode
-      darkModeToggle.addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
-
-        if (document.body.classList.contains("dark-mode")) {
-          localStorage.setItem("darkMode", "enabled");
-          icon.classList.replace("fa-moon", "fa-sun");
-        } else {
-          localStorage.setItem("darkMode", "disabled");
-          icon.classList.replace("fa-sun", "fa-moon");
-        }
-      });
-    });
-  </script>
-</body>
-</html>
