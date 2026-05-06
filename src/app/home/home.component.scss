@@ -36,7 +36,7 @@
 }
 
 /* === DARK MODE OVERRIDES === */
-:host(.dark-mode) {
+body.dark-mode :host {
   --bg-hero: #121212;
   --bg-about: #1a1a1a;
   --bg-projects: #242424;
@@ -169,7 +169,7 @@ html {
 }
 
 /* HERO TEXT & IMAGE */
-:host(.dark-mode) .hero-text {
+body.dark-mode .hero-text {
   color: #ffffff !important;
 }
 .hero-text {
@@ -337,10 +337,10 @@ html {
   padding: 0;
   margin: 0;
 }
-:host(.dark-mode) .about-section li {
+body.dark-mode .about-section li {
   color: #ffffff;
 }
-:host(.dark-mode) .about-section li strong {
+body.dark-mode .about-section li strong {
   color: #ffffff;
 }
 .about-section li {

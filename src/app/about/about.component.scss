@@ -36,7 +36,7 @@
 }
 
 /* === DARK MODE OVERRIDES === */
-:host(.dark-mode) {
+body.dark-mode :host {
   --bg-hero: #121212;
   --bg-about: #1a1a1a;
   --bg-projects: #242424;
@@ -45,9 +45,9 @@
   --bg-glass: rgba(45, 45, 45, 0.95);
   --bg-list: #363636;
   --bg-input: #3a3a3a;
-  --text-h1: #f1f1f1;
-  --text-h3: #e0e0e0;
-  --text-p: #cccccc;
+  --text-h1: #ffffff;
+  --text-h3: #ffffff;
+  --text-p: #ffffff;
   --text-muted: #bbbbbb;
   --text-label: #ecf0f1;
   --border-main: #444444;
@@ -138,10 +138,10 @@
   padding: 0;
   margin: 0;
 }
-:host(.dark-mode) .about-section li {
+body.dark-mode .about-section li {
   color: #ffffff;
 }
-:host(.dark-mode) .about-section li strong {
+body.dark-mode .about-section li strong {
   color: #ffffff;
 }
 .about-section li {

@@ -1,5 +1,66 @@
+:host {
+  /* === LIGHT MODE (Default) === */
+  --bg-hero: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --bg-about: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --bg-projects: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+  --bg-contact: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+  --bg-list: #ffffff;
+  --bg-input: #fafbfc;
+  --text-h1: #333333;
+  --text-h3: #333333;
+  --text-p: #555555;
+  --text-muted: #666666;
+  --text-label: #2c3e50;
+  --border-main: #e9ecef;
+  --border-input: #e1e8ed;
+  --border-navbar: #dddddd;
+  --accent-blue: #007bff;
+  --accent-blue-dark: #0056b3;
+  --shadow-main: rgba(0, 0, 0, 0.1);
+  --shadow-card: rgba(0, 0, 0, 0.05);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --btn-dark-bg: linear-gradient(135deg, #333333, #555555);
+  --btn-dark-hover: linear-gradient(135deg, #555555, #777777);
+  --btn-submit: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  --btn-submit-hover: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+  --error-color: #e74c3c;
+
+  /* Shared */
+  --transition: all 0.3s ease;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-pill: 50px;
+}
+
+/* === DARK MODE OVERRIDES === */
+body.dark-mode :host {
+  --bg-hero: #121212;
+  --bg-about: #1a1a1a;
+  --bg-projects: #242424;
+  --bg-contact: #1a1a1a;
+  --bg-card: #2d2d2d;
+  --bg-glass: rgba(45, 45, 45, 0.95);
+  --bg-list: #363636;
+  --bg-input: #3a3a3a;
+  --text-h1: #ffffff;
+  --text-h3: #ffffff;
+  --text-p: #ffffff;
+  --text-muted: #bbbbbb;
+  --text-label: #ecf0f1;
+  --border-main: #444444;
+  --border-input: #555555;
+  --border-navbar: #444444;
+  --shadow-main: rgba(0, 0, 0, 0.4);
+  --shadow-card: rgba(0, 0, 0, 0.2);
+  --shadow-hover: rgba(0, 0, 0, 0.5);
+  --btn-dark-bg: linear-gradient(135deg, #4a4a4a, #666666);
+  --btn-dark-hover: linear-gradient(135deg, #666666, #888888);
+}
+
 .design-section {
-  background: linear-gradient(135deg, #f4f7fb 0%, #eef4ff 100%);
+  background: var(--bg-projects);
   min-height: 100vh;
   padding: 4rem 2rem;
   display: flex;
@@ -19,14 +80,14 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #1f2937;
+  color: var(--text-h1);
 }
 
 .design-section p {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: #475569;
+  color: var(--text-p);
 }
 
 .design-grid {
@@ -36,7 +97,7 @@
 }
 
 .design-card {
-  background: #ffffff;
+  background: var(--bg-card);
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
@@ -87,12 +148,12 @@
   font-size: 1.4rem;
   font-weight: 700;
   margin: 1.25rem 1.5rem 0.75rem;
-  color: #111827;
+  color: var(--text-h1);
 }
 
 .design-card p {
   font-size: 1rem;
   line-height: 1.75;
   margin: 0 1.5rem 1.5rem;
-  color: #475569;
+  color: var(--text-p);
 }

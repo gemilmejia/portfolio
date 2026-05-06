@@ -1,45 +1,22 @@
-/* Default (Light Mode) Styles */
+/* Body colors come from global theme variables in src/styles.scss */
 body {
   background-color: #f4f4f4;
   color: #333;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar {
-  background-color: #d9d9d9;
-  color: black;
-}
-
-.navbar a {
-  color: black;
-}
-
-.navbar a:hover {
-  color: red;
-}
-
-/* Dark Mode Styles */
+/* Keep this only for JS toggle fallback; real colors come from CSS variables */
 body.dark-mode {
   background-color: #333;
-  color: white;
+  color: #ffffff;
 }
 
-body.dark-mode .navbar {
-  background-color: #555;
+/* Ensure text is visible in both modes */
+:host {
+  --text-light-mode: #333333;
+  --text-dark-mode: #ffffff;
 }
 
-body.dark-mode .navbar a {
-  color: white;
+body.dark-mode :host {
+  --text-light-mode: #ffffff;
 }
 
-body.dark-mode .navbar a:hover {
-  color: #ff6347; /* Tomato color on hover */
-}
-
-body.dark-mode .social-icon {
-  color: white;
-}
-
-body.dark-mode .dark-mode-toggle {
-  color: white;
-}

@@ -1,1 +1,201 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global theming (Light/Dark) + shared UI styles.
+   Toggle is done by adding/removing `body.dark-mode` in app.component.ts.
+*/
+
+/* =========================
+   THEME TOKENS (GLOBAL)
+   ========================= */
+:root {
+  /* === LIGHT MODE (Default) === */
+  --bg-hero: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --bg-about: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --bg-projects: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+  --bg-contact: #f8f9fa;
+
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+  --bg-list: #ffffff;
+  --bg-input: #fafbfc;
+
+  --text-h1: #333333;
+  --text-h3: #333333;
+  --text-p: #555555;
+  --text-muted: #666666;
+  --text-label: #2c3e50;
+
+  --border-main: #e9ecef;
+  --border-input: #e1e8ed;
+  --border-navbar: #dddddd;
+
+  --accent-blue: #007bff;
+  --accent-blue-dark: #0056b3;
+
+  --shadow-main: rgba(0, 0, 0, 0.1);
+  --shadow-card: rgba(0, 0, 0, 0.05);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+
+  --btn-dark-bg: linear-gradient(135deg, #333333, #555555);
+  --btn-dark-hover: linear-gradient(135deg, #555555, #777777);
+
+  --btn-submit: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  --btn-submit-hover: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+
+  --error-color: #e74c3c;
+
+  /* Shared */
+  --transition: all 0.3s ease;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-pill: 50px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #ffffff;
+  /* === DARK MODE OVERRIDES === */
+  --bg-hero: #121212;
+  --bg-about: #1a1a1a;
+  --bg-projects: #242424;
+  --bg-contact: #1a1a1a;
+
+  --bg-card: #2d2d2d;
+  --bg-glass: rgba(45, 45, 45, 0.95);
+  --bg-list: #363636;
+  --bg-input: #3a3a3a;
+
+  --text-h1: #ffffff;
+  --text-h3: #e0e0e0;
+  --text-p: #ffffff;
+  --text-muted: #bbbbbb;
+  --text-label: #ecf0f1;
+
+  --border-main: #444444;
+  --border-input: #555555;
+  --border-navbar: #444444;
+
+  --shadow-main: rgba(0, 0, 0, 0.4);
+  --shadow-card: rgba(0, 0, 0, 0.2);
+  --shadow-hover: rgba(0, 0, 0, 0.5);
+
+  --btn-dark-bg: linear-gradient(135deg, #4a4a4a, #666666);
+  --btn-dark-hover: linear-gradient(135deg, #666666, #888888);
+}
+
+/* Ensure all text elements respect dark mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode label {
+  color: #ffffff !important;
+}
+
+/* Light mode text should be black/dark */
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p,
+body span,
+body li,
+body label {
+  color: #333333 !important;
+}
+
+/* =========================
+   NAVBAR & COMMON ELEMENTS
+   ========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 250px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-navbar);
+}
+
+.navbar a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--text-h1);
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: var(--accent-blue);
+}
+
+.social-icon {
+  margin: 0 8px;
+  color: var(--text-h1);
+  font-size: 18px;
+  transition: var(--transition);
+}
+
+.social-icon:hover {
+  color: var(--accent-blue);
+}
+
+.dark-mode-toggle {
+  margin-left: 15px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--text-h1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BACK TO TOP */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent-blue);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s,
+    transform 0.3s,
+    background-color 0.3s;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top-btn:hover {
+  background: var(--accent-blue-dark);
+}
+
+
