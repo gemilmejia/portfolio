@@ -193,3 +193,11 @@ body.dark-mode :host {
   background: #007bff;
   color: #fff;
 }
+
+.project-image {
+  width: 100%;
+  height: 600px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
