@@ -99,9 +99,9 @@ body.dark-mode :host {
 
 /* HEADERS */
 .projects-section h1 {
-  font-size: 2.5rem;
+  font-size: 45px;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 10px;
   color: var(--text-h1);
   position: relative;
 }
@@ -121,7 +121,7 @@ body.dark-mode :host {
 .projects-section p {
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 10px;
   color: var(--text-p);
   text-align: center;
 }
@@ -138,7 +138,7 @@ body.dark-mode :host {
   padding: 2rem;
   border-radius: var(--radius-card);
   box-shadow: 0 4px 15px var(--shadow-main);
-  transition: var(--transition);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--border-main);
 }
 .project-card:hover {
@@ -196,8 +196,8 @@ body.dark-mode :host {
 
 .project-image {
   width: 100%;
-  height: 600px;
-  margin-bottom: 1rem;
+  height: 450px;
+  margin-bottom: 10px;
   overflow: hidden;
   border-radius: var(--radius-card);
 }
