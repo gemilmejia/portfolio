@@ -36,7 +36,8 @@
 }
 
 /* === DARK MODE OVERRIDES === */
-body.dark-mode :host {
+:host-context(body.dark-mode) {
+
   --bg-hero: #121212;
   --bg-about: #1a1a1a;
   --bg-projects: #242424;
@@ -64,6 +65,168 @@ body.dark-mode :host {
 .contact-section {
   background: var(--bg-contact);
 }
+
+/* === CONTACT CARD LAYOUT === */
+.contact-section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.contact-section .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px, 10px, 10px, 10px;
+  text-align: center;
+}
+
+.contact-content {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  padding: 10px, 10px, 10px, 10px;
+  box-shadow: 0 14px 40px var(--shadow-main);
+  border: 1px solid var(--border-main);
+  text-align: center;
+}
+
+.contact-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--text-h1);
+  letter-spacing: -0.02em;
+}
+
+.contact-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  margin-bottom: 1.75rem;
+  color: var(--text-p);
+}
+
+.contact-list {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-btn);
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  border-color: var(--border-main);
+  box-shadow: 0 8px 25px var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  color: var(--text-label);
+  font-weight: 800;
+}
+
+
+.contact-label {
+  font-weight: 700;
+  color: var(--text-label);
+  opacity: 0.9;
+}
+
+.contact-item a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.contact-item a:hover {
+  color: var(--accent-blue-dark);
+  transform: translateY(-1px);
+}
+
+.contact-item .optional {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Make contact links look like UI chips */
+.contact-item a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 650;
+  line-height: 1;
+  padding: 0.35rem 0.55rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg-input) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border-input) 55%, transparent);
+}
+
+.contact-item a:hover {
+  color: var(--accent-blue-dark);
+  background: color-mix(in srgb, var(--bg-input) 40%, transparent);
+  border-color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+
+.resume-download {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.download-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--btn-submit);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 18px var(--shadow-hover);
+  transition: var(--transition);
+}
+
+.download-cv-btn:hover {
+  background: var(--btn-submit-hover);
+  transform: translateY(-2px);
+}
+
+.resume-note {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
 
 .contact-section {
   min-height: 100vh;
