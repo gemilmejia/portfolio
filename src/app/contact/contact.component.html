@@ -1,99 +1,63 @@
 <section id="contact" class="contact-section" aria-labelledby="contact-heading">
   <div class="container">
     <div class="contact-content">
-      <h2 id="contact-heading" class="contact-title">Get In Touch</h2>
-      <p class="contact-subtitle">Let's connect and start the conversation.</p>
-      <p class="contact-description">
-        Feel free to send me a message, and I'll get back to you as soon as
-        possible.
-      </p>
+      <h2 id="contact-heading" class="contact-title">My Contact</h2>
+      <p class="contact-subtitle">Get in touch & connect</p>
 
-      <form
-        #contactForm="ngForm"
-        (ngSubmit)="onSubmit(contactForm)"
-        class="contact-form"
-      >
-        <div class="form-group">
-          <label for="name" class="form-label">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            [(ngModel)]="contact.name"
-            required
-            #name="ngModel"
-            class="form-input"
-            placeholder="Your full name"
-          />
-          <div *ngIf="name.invalid && name.touched" class="error-message">
-            Name is required.
+        <div class="contact-list" role="list">
+
+          <!-- Email -->
+          <div class="contact-item" role="listitem">
+            <span class="contact-icon" aria-hidden="true">✉️</span>
+            <span class="contact-label">Email:</span>
+
+            <a href="mailto:gemilmejia65@gmail.com">
+             gemilmejia65&#64;gmail.com
+            </a>
           </div>
+
+          <!-- Linked In -->
+        <div class="contact-item" role="listitem">
+          <span class="contact-icon" aria-hidden="true">in</span>
+          <span class="contact-label">LinkedIn</span>
+
+          <a href="https://www.linkedin.com/in/gemil-m-365346217/" target="_blank" rel="noopener noreferrer">Gemil Mejia</a>
         </div>
 
-        <div class="form-group">
-          <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            [(ngModel)]="contact.email"
-            required
-            email
-            #email="ngModel"
-            class="form-input"
-            placeholder="your.email@example.com"
-          />
-          <div *ngIf="email.invalid && email.touched" class="error-message">
-            <span *ngIf="email.errors?.['required']">Email is required.</span>
-            <span *ngIf="email.errors?.['email']"
-              >Please enter a valid email address.</span
-            >
-          </div>
+
+        <!-- Instagram -->
+        <div class="contact-item" role="listitem">
+          <span class="contact-icon" aria-hidden="true">📸</span>
+          <span class="contact-label">Instagram</span>
+
+          <a href="https://www.instagram.com/mejiagemil_/" target="_blank" rel="noopener noreferrer">Gemil Mejia</a>
         </div>
 
-        <div class="form-group">
-          <label for="subject" class="form-label">Subject</label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            [(ngModel)]="contact.subject"
-            required
-            #subject="ngModel"
-            class="form-input"
-            placeholder="What's this about?"
-          />
-          <div *ngIf="subject.invalid && subject.touched" class="error-message">
-            Subject is required.
-          </div>
+        <!-- Facebook -->
+        <div class="contact-item" role="listitem">
+          <span class="contact-icon" aria-hidden="true">f</span>
+          <span class="contact-label">Facebook</span>
+
+          <a href="https://www.facebook.com/Gemil.Mejia26" target="_blank" rel="noopener noreferrer">Gemil Mejia</a>
         </div>
 
-        <div class="form-group">
-          <label for="message" class="form-label">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            [(ngModel)]="contact.message"
-            required
-            #message="ngModel"
-            class="form-textarea"
-            placeholder="Your message here..."
-            rows="5"
-          ></textarea>
-          <div *ngIf="message.invalid && message.touched" class="error-message">
-            Message is required.
-          </div>
+        <!-- Phone -->
+        <div class="contact-item" role="listitem">
+          <span class="contact-icon" aria-hidden="true">📞</span>
+          <span class="contact-label">Phone</span>
+
+          <a href="tel:+639265336959">+63 926 533 6959</a>
         </div>
 
-        <button
-          type="submit"
-          [disabled]="contactForm.invalid"
-          class="contact-submit-btn"
-        >
-          <i class="fas fa-paper-plane" aria-hidden="true"></i>
-          Send Message
-        </button>
-      </form>
+      </div>
+
+      <div class="resume-download">
+        <a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="download-cv-btn">
+          Download Resume
+        </a>
+        <p class="resume-note">Click to download my PDF Resume.</p>
+      </div>
+
     </div>
   </div>
 </section>
