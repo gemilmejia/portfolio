@@ -1,6 +1,4 @@
 import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../hero/hero.component';
 import { AboutComponent } from '../about/about.component';
@@ -8,19 +6,10 @@ import { ProjectsComponent } from '../projects/projects.component';
 import { DesignComponent } from '../design';
 import { ContactComponent } from '../contact/contact.component';
 
-interface ContactForm {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    RouterModule,
-    FormsModule,
     CommonModule,
     HeroComponent,
     AboutComponent,
@@ -32,13 +21,6 @@ interface ContactForm {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  contact: ContactForm = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  };
-
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
@@ -130,19 +112,5 @@ export class HomeComponent implements OnInit {
   private isElementInViewport(el: HTMLElement): boolean {
     const rect = el.getBoundingClientRect();
     return rect.top < window.innerHeight && rect.bottom > 0;
-  }
-
-  onSubmit(form: any): void {
-    if (form.valid) {
-      console.log('Form submitted:', this.contact);
-      alert('Thank you for your message! I will get back to you soon.');
-      this.contact = {
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      };
-      form.resetForm();
-    }
   }
 }
