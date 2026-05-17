@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { HeroComponent } from './hero/hero.component';
 import { AboutComponent } from './about/about.component';
@@ -12,7 +12,6 @@ import { ContactComponent } from './contact/contact.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     HeroComponent,
     AboutComponent,
     ProjectsComponent,
@@ -26,14 +25,6 @@ import { ContactComponent } from './contact/contact.component';
 export class AppComponent implements OnInit {
   title = 'my-portfolio';
   isDarkMode: boolean = false; // Declare the dark mode property
-
-  contact = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  };
-
 
   constructor(private router: Router) {}
 
@@ -76,11 +67,4 @@ export class AppComponent implements OnInit {
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  onSubmit(form: any): void {
-    // existing ContactComponent emits raw form; keep current behavior placeholder
-    // Replace with real API call if needed.
-    console.log('Contact form submitted:', form);
-  }
-
 }
