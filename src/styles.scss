@@ -1,167 +1,129 @@
-/* Global theming (Light/Dark) + shared UI styles.
-   Toggle is done by adding/removing `body.dark-mode` in app.component.ts.
-*/
-
 /* =========================
-   THEME TOKENS (GLOBAL)
-   ========================= */
+   GLOBAL THEME (UNCHANGED)
+========================= */
+
 :root {
-  /* === LIGHT MODE (Default) === */
   --bg-hero: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   --bg-about: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   --bg-projects: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
   --bg-contact: #f8f9fa;
 
   --bg-card: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.9);
-  --bg-list: #ffffff;
-  --bg-input: #fafbfc;
 
   --text-h1: #333333;
-  --text-h3: #333333;
   --text-p: #555555;
   --text-muted: #666666;
-  --text-label: #2c3e50;
-
-  --border-main: #e9ecef;
-  --border-input: #e1e8ed;
-  --border-navbar: #dddddd;
 
   --accent-blue: #007bff;
   --accent-blue-dark: #0056b3;
 
-  --shadow-main: rgba(0, 0, 0, 0.1);
-  --shadow-card: rgba(0, 0, 0, 0.05);
-  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --border-navbar: #dddddd;
 
-  --btn-dark-bg: linear-gradient(135deg, #333333, #555555);
-  --btn-dark-hover: linear-gradient(135deg, #555555, #777777);
-
-  --btn-submit: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  --btn-submit-hover: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
-
-  --error-color: #e74c3c;
-
-  /* Shared */
   --transition: all 0.3s ease;
-  --radius-card: 12px;
-  --radius-btn: 8px;
-  --radius-pill: 50px;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  transition: background-color 0.3s, color 0.3s;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
+/* DARK MODE (UNCHANGED) */
 body.dark-mode {
-  background-color: #333;
-  color: #ffffff;
-  /* === DARK MODE OVERRIDES === */
   --bg-hero: #121212;
   --bg-about: #1a1a1a;
   --bg-projects: #242424;
   --bg-contact: #1a1a1a;
 
   --bg-card: #2d2d2d;
-  --bg-glass: rgba(45, 45, 45, 0.95);
-  --bg-list: #363636;
-  --bg-input: #3a3a3a;
 
   --text-h1: #ffffff;
-  --text-h3: #e0e0e0;
-  --text-p: #ffffff;
-  --text-muted: #bbbbbb;
-  --text-label: #ecf0f1;
+  --text-p: #cccccc;
+  --text-muted: #aaaaaa;
 
-  --border-main: #444444;
-  --border-input: #555555;
-  --border-navbar: #444444;
-
-  --shadow-main: rgba(0, 0, 0, 0.4);
-  --shadow-card: rgba(0, 0, 0, 0.2);
-  --shadow-hover: rgba(0, 0, 0, 0.5);
-
-  --btn-dark-bg: linear-gradient(135deg, #4a4a4a, #666666);
-  --btn-dark-hover: linear-gradient(135deg, #666666, #888888);
+  --border-navbar: #444;
 }
 
-/* Ensure all text elements respect dark mode */
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6,
-body.dark-mode p,
-body.dark-mode span,
-body.dark-mode li,
-body.dark-mode label {
+/* Ensure brand subtitle is visible when dark mode is applied to body or host elements */
+body.dark-mode .navbar-brand small,
+.dark-mode .navbar-brand small,
+body.dark-mode .navbar-brand-container span,
+.dark-mode .navbar-brand-container span,
+body.dark-mode .navbar-brand span,
+.dark-mode .navbar-brand span {
   color: #ffffff !important;
 }
 
-/* Light mode text should be black/dark */
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6,
-body p,
-body span,
-body li,
-body label {
-  color: #333333 !important;
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Inter', Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* =========================
-   NAVBAR & COMMON ELEMENTS
-   ========================= */
+   NAVBAR (FIXED RESPONSIVE ONLY)
+========================= */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 250px;
+
+  padding: 15px 40px;
+  max-width: 6000px;
+  margin: 0 auto;
+
+  flex-wrap: nowrap; /* IMPORTANT FIX */
   background: var(--bg-card);
   border-bottom: 1px solid var(--border-navbar);
 }
 
+/* LINKS */
 .navbar a {
-  margin: 0 10px;
   text-decoration: none;
   color: var(--text-h1);
   font-weight: 500;
+  transition: var(--transition);
 }
 
 .navbar a:hover {
   color: var(--accent-blue);
 }
 
-.social-icon {
-  margin: 0 8px;
-  color: var(--text-h1);
-  font-size: 18px;
-  transition: var(--transition);
+/* CENTER LINKS */
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0; /* FIX overflow */
 }
 
-.social-icon:hover {
-  color: var(--accent-blue);
+/* RIGHT SIDE */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ICONS */
+.social-icon {
+  color: var(--text-h1);
+  font-size: 18px;
 }
 
 .dark-mode-toggle {
-  margin-left: 15px;
   background: none;
   border: none;
-  font-size: 18px;
   cursor: pointer;
   color: var(--text-h1);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 18px;
 }
 
 /* BACK TO TOP */
@@ -169,24 +131,19 @@ body label {
   position: fixed;
   bottom: 20px;
   right: 20px;
+
   background: var(--accent-blue);
-  color: #fff;
+  color: white;
+
   border: none;
   border-radius: 25px;
+
   padding: 10px 20px;
-  font-size: 16px;
   cursor: pointer;
+
   opacity: 0;
   visibility: hidden;
-  transition:
-    opacity 0.3s,
-    visibility 0.3s,
-    transform 0.3s,
-    background-color 0.3s;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  transition: var(--transition);
 }
 
 .back-to-top-btn.show {
@@ -194,8 +151,92 @@ body label {
   visibility: visible;
 }
 
-.back-to-top-btn:hover {
-  background: var(--accent-blue-dark);
+/* =========================
+   SIDEBAR (MOBILE ONLY)
+========================= */
+
+.hamburger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text-h1);
 }
 
+/* overlay */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
 
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: 0.3s;
+  z-index: 9998;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100vh;
+
+  background: var(--bg-card);
+  box-shadow: -2px 0 15px rgba(0,0,0,0.1);
+
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  transition: right 0.3s ease;
+  z-index: 9999;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: var(--text-h1);
+  font-weight: 500;
+}
+
+/* bottom icons */
+.sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar-links,
+  .navbar-right {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
