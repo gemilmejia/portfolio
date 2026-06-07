@@ -40,8 +40,16 @@
 <app-contact></app-contact>
 
 <!-- Back to Top Button -->
-<button id="backToTopBtn" class="back-to-top-btn" (click)="scrollToTop()">
-  <i class="fas fa-arrow-up"></i> Back to Top
+<button
+  id="backToTopBtn"
+  class="back-to-top-btn"
+  type="button"
+  aria-label="Back to Top"
+  title="Back to Top"
+  [class.show]="showBackToTop"
+  (click)="scrollToTop()"
+>
+  <i class="fas fa-chevron-up" aria-hidden="true"></i>
 </button>
 
 
