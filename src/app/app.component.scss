@@ -10,6 +10,46 @@ body.dark-mode {
   color: #ffffff;
 }
 
+/* Back to Top button */
+.back-to-top-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f8cff 0%, #3366ff 100%);
+  color: #ffffff;
+  box-shadow: 0 18px 40px rgba(51, 102, 255, 0.18);
+  cursor: pointer;
+  transform: translateY(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
+  z-index: 1000;
+}
+
+.back-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn:hover,
+.back-to-top-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 22px 48px rgba(51, 102, 255, 0.28);
+  transform: translateY(-2px);
+}
+
+.back-to-top-btn i {
+  font-size: 18px;
+}
+
 /* Ensure text is visible in both modes */
 :host {
   --text-light-mode: #333333;
