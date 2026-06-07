@@ -93,15 +93,34 @@ body .hero-text p {
 }
 
 .hero-buttons .btn-light {
-  background: var(--bg-card);
-  color: var(--text-h1);
-  border-color: var(--text-h1);
+  background: #ffffff;
+  color: #111111;
+  border-color: #111111;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.18s ease;
 }
 
 .hero-buttons .btn-light:hover {
-  background: var(--bg-glass);
-  color: var(--text-h1);
-  border-color: var(--text-h1);
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.dark-mode .hero-buttons .btn-light,
+/* Ensure dark-mode host or body doesn't override CTA styling */
+body.dark-mode .hero-buttons .btn-light,
+.dark-mode .hero-buttons .btn-light {
+  background: #ffffff !important;
+  color: #111111 !important;
+  border-color: #111111 !important;
+}
+
+body.dark-mode .hero-buttons .btn-light:hover,
+.dark-mode .hero-buttons .btn-light:hover {
+  background: #111111 !important;
+  color: #ffffff !important;
+  border-color: #111111 !important;
 }
 
 /* RESPONSIVE HERO */
