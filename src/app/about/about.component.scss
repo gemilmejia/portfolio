@@ -139,12 +139,13 @@ body.dark-mode :host {
   margin: 0;
 }
 body.dark-mode .about-section li {
-  color: #ffffff;
+  color: var(--text-p);
 }
 body.dark-mode .about-section li strong {
-  color: #ffffff;
+  color: var(--text-h1);
 }
 .about-section li {
+  color: var(--text-p);
   background: var(--bg-list);
   margin-bottom: 0.5rem;
   padding: 1rem;
