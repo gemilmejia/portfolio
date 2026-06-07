@@ -1,68 +1,84 @@
-<!-- Navbar -->
-<nav class="navbar">
-  <!-- Brand -->
-  <div class="navbar-brand-container">
-    <a class="navbar-brand" href="#">Gemil Mejia</a>
-    <br />&nbsp;&nbsp;<span>Software - Developer</span>
-  </div>
+<!-- NAVBAR -->
+<nav class="navbar custom-navbar">
 
-  <!-- Center Links -->
-  <div class="navbar-links">
-    <a href="#" (click)="scrollToSection('hero'); $event.preventDefault()"
-      >HOME</a
-    >
-    <a href="#" (click)="scrollToSection('about'); $event.preventDefault()"
-      >ABOUT</a
-    >
-    <a href="#" (click)="scrollToSection('projects'); $event.preventDefault()"
-      >PROJECTS</a
-    >
-    <a href="#" (click)="scrollToSection('design'); $event.preventDefault()"
-      >DESIGN WORK</a
-    >
-    <a href="#" (click)="scrollToSection('contact'); $event.preventDefault()"
-      >CONTACT</a
-    >
-  </div>
+  <div class="container navbar-container">
 
-  <!-- Right Side -->
-  <div class="navbar-right">
-    <a
-      href="https://www.instagram.com/mejiagemil_/"
-      target="_blank"
-      class="social-icon"
-      ><i class="fab fa-instagram"></i
-    ></a>
-    <!-- <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a> -->
-    <a
-      href="https://www.linkedin.com/in/gemil-m-365346217/"
-      target="_blank"
-      class="social-icon"
-      ><i class="fab fa-linkedin"></i
-    ></a>
+    <!-- BRAND -->
+    <a class="navbar-brand" href="#">
+      Gemil Mejia <br />
+      <small>Software Developer</small>
+    </a>
 
-    <!-- Dark Mode Button -->
-    <button
-      id="darkModeToggle"
-      class="dark-mode-toggle"
-      (click)="toggleDarkMode()"
-    >
-      <i class="fas fa-moon"></i>
+    <!-- HAMBURGER -->
+    <button class="hamburger" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
     </button>
+
+    <!-- DESKTOP LINKS -->
+    <div class="navbar-links">
+      <a (click)="scrollToSection('hero')">HOME</a>
+      <a (click)="scrollToSection('about')">ABOUT</a>
+      <a (click)="scrollToSection('projects')">PROJECTS</a>
+      <a (click)="scrollToSection('design')">DESIGN</a>
+      <a (click)="scrollToSection('contact')">CONTACT</a>
+    </div>
+
+    <!-- RIGHT ICONS -->
+    <div class="navbar-right">
+      <a href="https://instagram.com" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="https://linkedin.com" target="_blank" class="social-icon">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <button class="dark-mode-toggle" (click)="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+
   </div>
 </nav>
 
-<app-hero (scrollToSection)="scrollToSection($event)"></app-hero>
+<!-- SIDEBAR -->
+<div class="sidebar-overlay"
+     [class.active]="menuOpen"
+     (click)="closeMenu()"></div>
 
+<div class="sidebar" [class.open]="menuOpen">
+
+  <a (click)="scrollToSection('hero')">HOME</a>
+  <a (click)="scrollToSection('about')">ABOUT</a>
+  <a (click)="scrollToSection('projects')">PROJECTS</a>
+  <a (click)="scrollToSection('design')">DESIGN</a>
+  <a (click)="scrollToSection('contact')">CONTACT</a>
+
+  <div class="sidebar-bottom">
+
+    <a href="https://instagram.com" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://linkedin.com" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+
+    <button class="dark-mode-toggle" (click)="toggleDarkMode()">
+      <i class="fas fa-moon"></i>
+    </button>
+
+  </div>
+</div>
+
+<!-- PAGE -->
+<app-hero></app-hero>
 <app-about></app-about>
-
 <app-projects></app-projects>
-
 <app-design></app-design>
-
 <app-contact></app-contact>
 
-<!-- Back to Top Button -->
-<button id="backToTopBtn" class="back-to-top-btn" (click)="scrollToTop()">
-  <i class="fas fa-arrow-up"></i> Back to Top
+<!-- BACK TO TOP -->
+<button class="back-to-top-btn" (click)="scrollToTop()">
+  <i class="fas fa-arrow-up"></i>
 </button>
