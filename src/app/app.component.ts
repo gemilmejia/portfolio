@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { HeroComponent } from './hero/hero.component';
@@ -25,6 +25,7 @@ import { ContactComponent } from './contact/contact.component';
 export class AppComponent implements OnInit {
   title = 'my-portfolio';
   isDarkMode: boolean = false; // Declare the dark mode property
+  showBackToTop = false;
 
   constructor(private router: Router) {}
 
@@ -62,6 +63,11 @@ export class AppComponent implements OnInit {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     });
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    this.showBackToTop = window.pageYOffset > 320;
   }
 
   scrollToTop(): void {
