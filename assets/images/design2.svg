@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7f50"/>
+      <stop offset="1" stop-color="#ffcc5c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="32" fill="url(#b)" />
+  <rect x="120" y="160" width="560" height="320" rx="32" fill="#ffffff" opacity="0.16" />
+  <circle cx="220" cy="210" r="48" fill="#ffffff" opacity="0.24" />
+  <circle cx="580" cy="240" r="32" fill="#ffffff" opacity="0.3" />
+  <path d="M160 420h480" stroke="#ffffff" stroke-width="16" opacity="0.7" stroke-linecap="round"/>
+  <text x="400" y="310" fill="#ffffff" font-family="Arial, sans-serif" font-size="48" font-weight="700" text-anchor="middle">Brand Design</text>
+</svg>
