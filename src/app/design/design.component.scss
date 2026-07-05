@@ -136,35 +136,37 @@ body.dark-mode :host {
   transition: transform 0.35s ease;
 }
 
-// Zoom button shown on hover on desktop and kept visible on touch devices.
-.zoom-button {
+// Small magnifying-glass button that opens the gallery preview.
+.preview-button {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: none;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  padding: 0.75rem 1rem;
-  border: none;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--accent-blue);
-  font-weight: 700;
-  font-size: 0.95rem;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(8px);
   cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  z-index: 2;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  z-index: 3;
 }
 
-.zoom-button:hover {
-  background: var(--accent-blue);
-  color: #ffffff;
-  transform: translate(-50%, -50%) scale(1.04);
+.preview-button:hover {
+  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.22);
+}
+
+.preview-button svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
 }
 
 .design-overlay {
@@ -373,24 +375,11 @@ body.dark-mode :host {
     aspect-ratio: 4 / 3;
   }
 
-  .zoom-button {
-    padding: 0.65rem 0.9rem;
-    font-size: 0.9rem;
-  }
-
-  .design-overlay {
-    opacity: 1;
-    position: absolute;
-    inset: auto 0 0 0;
-    padding: 0.8rem 1rem;
-    background: linear-gradient(
-      180deg,
-      rgba(15, 23, 42, 0.1) 0%,
-      rgba(15, 23, 42, 0.8) 100%
-    );
-    justify-content: flex-start;
-    align-items: flex-end;
-    font-size: 0.9rem;
+  .preview-button {
+    top: 0.6rem;
+    right: 0.6rem;
+    width: 2.1rem;
+    height: 2.1rem;
   }
 }
 
