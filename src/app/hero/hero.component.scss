@@ -12,7 +12,7 @@
 .hero-container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 100px 70px 0px 70px;
+  padding: 100px 70px 70px 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -169,4 +169,31 @@ body.dark-mode .hero-buttons .btn-light:hover,
   background: #ffffff; /* Darker on hover */
   border-color: #000000;
   color: #000000;
+}
+
+// Skills Section //
+.skills-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 2rem 0;
+}
+
+.skill-badge {
+  padding: 8px 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 999px;
+  background: #f8f9fa;
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.skill-badge:hover {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+  transform: translateY(-2px);
 }
