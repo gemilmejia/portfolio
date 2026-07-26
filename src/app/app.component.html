@@ -1,46 +1,52 @@
 <!-- Angular app layout (dark/light is handled by body.dark-mode + CSS variables in styles.scss) -->
-<h1 style="display:none">Hello, my-portfolio</h1>
+<!-- <h1 style="display:none">Hello, my-portfolio</h1> -->
 
-<nav class="navbar">
+<!-- <nav class="navbar"> -->
   <!-- Brand -->
-  <div class="navbar-brand-container">
+  <!-- <div class="navbar-brand-container">
     <a class="navbar-brand" href="#">Gemil Mejia</a>
     <br />&nbsp;&nbsp;<span>Software Developer</span>
-  </div>
+  </div> -->
 
   <!-- Center Links -->
-  <div class="navbar-links">
+<!--  <div class="navbar-links">
     <a href="#" (click)="scrollToSection('hero'); $event.preventDefault()">HOME</a>
     <a href="#" (click)="scrollToSection('about'); $event.preventDefault()">ABOUT</a>
     <a href="#" (click)="scrollToSection('projects'); $event.preventDefault()">PROJECTS</a>
     <a href="#" (click)="scrollToSection('design'); $event.preventDefault()">DESIGN WORK</a>
     <a href="#" (click)="scrollToSection('contact'); $event.preventDefault()">CONTACT</a>
   </div>
+-->
 
+  <!-- HAMBURGER -->
+    <!-- <button class="hamburger" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button> -->
+<!--    <button class="hamburger" (click)="toggleMenu()">
+  ☰
+</button>
+-->
   <!-- Right Side -->
-  <div class="navbar-right">
+<!--  <div class="navbar-right">
     <a href="https://www.instagram.com/mejiagemil_/" target="_blank" class="social-icon">
       <i class="fab fa-instagram"></i>
     </a>
     <a href="https://www.linkedin.com/in/gemil-m-365346217/" target="_blank" class="social-icon">
       <i class="fab fa-linkedin"></i>
     </a>
-
+  -->
     <!-- Dark Mode Button -->
-    <button id="darkModeToggle" class="dark-mode-toggle" (click)="toggleDarkMode()">
+    <!-- <button id="darkModeToggle" class="dark-mode-toggle" (click)="toggleDarkMode()">
       <i class="fas fa-moon"></i>
     </button>
   </div>
 </nav>
+-->
 
-<app-hero (scrollToSection)="scrollToSection($event)"></app-hero>
-<app-about></app-about>
-<app-projects></app-projects>
-<app-design></app-design>
-<app-contact></app-contact>
+<!-- <router-outlet></router-outlet> -->
 
 <!-- Back to Top Button -->
-<button
+<!-- <button
   id="backToTopBtn"
   class="back-to-top-btn"
   type="button"
@@ -51,5 +57,20 @@
 >
   <i class="fas fa-chevron-up" aria-hidden="true"></i>
 </button>
+-->
+<!--
+<app-hero (scrollToSection)="scrollToSection($event)"></app-hero>
+<app-about></app-about>
+<app-projects></app-projects>
+<app-design></app-design>
+<app-contact></app-contact> -->
 
 
+<!-- SECTIONS -->
+<!-- <app-hero></app-hero>
+<app-about></app-about>
+<app-projects></app-projects>
+<app-design></app-design>
+<app-contact></app-contact> -->
+
+<router-outlet></router-outlet>
