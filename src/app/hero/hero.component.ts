@@ -15,29 +15,42 @@ export class HeroComponent {
     this.scrollToSection.emit(section);
   }
 
-  skills: string[] = [
-  'Angular',
-  'TypeScript',
-  'JavaScript',
-  'HTML',
-  'CSS',
-  'Bootstrap',
-  // 'Tailwind CSS',
-  // 'SASS/SCSS',
-  // 'React.js',
-  // 'Next.js',
-  'Node.js',
-  'Express.js',
-  'PHP',
-  'MySQL',
-  'SQL Server Management Studio',
-  'RESTful APIs',
-  // 'JSON',
-  // 'AJAX',
-  // 'jQuery',
-  'Git',
-  // 'Figma',
-  // 'Adobe Photoshop',
-  // 'Adobe Premiere'
-];
-}
+//   skills: string[] = [
+//   'Angular',
+//   'TypeScript',
+//   'JavaScript',
+//   'HTML',
+//   'CSS',
+//   'Bootstrap',
+//   // 'Tailwind CSS',
+//   // 'SASS/SCSS',
+//   // 'React.js',
+//   // 'Next.js',
+//   'Node.js',
+//   'Express.js',
+//   'PHP',
+//   'MySQL',
+//   'SQL Server Management Studio',
+//   'RESTful APIs',
+//   // 'JSON',
+//   // 'AJAX',
+//   // 'jQuery',
+//   'Git',
+//   // 'Figma',
+//   // 'Adobe Photoshop',
+//   // 'Adobe Premiere'
+// ];
+
+// skills2: string[] = [
+//   'C',
+//   'C++',
+//   'PHP',
+//   'Python',
+//   'Laravel',
+//   'C#',
+//   'ASP.NET',
+//   'RestAPI Basics',
+//   'Node.js',
+//   'Express.js'
+// ];
+// }
