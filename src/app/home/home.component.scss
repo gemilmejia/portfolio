@@ -1,13 +1,28 @@
 :host {
   display: block;
+  padding-top: 90px;
 }
 
 /* ================= NAVBAR ================= */
 
+// .custom-navbar {
+//   position: sticky;
+//   top: 0;
+//   z-index: 9999;
+//   background: var(--bg-card);
+//   border-bottom: 1px solid var(--border-navbar);
+// }
+
 .custom-navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+
   z-index: 9999;
+
   background: var(--bg-card);
   border-bottom: 1px solid var(--border-navbar);
 }
