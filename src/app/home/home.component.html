@@ -87,7 +87,9 @@
 
 <!-- PAGE SECTIONS -->
 
-<app-hero></app-hero>
+<app-hero
+  (scrollToSection)="scrollToSection($event)">
+</app-hero>
 
 <app-about></app-about>
 
