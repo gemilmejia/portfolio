@@ -1,10 +1,12 @@
 import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { HeroComponent } from '../hero/hero.component';
 import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { DesignComponent } from '../design';
 import { ContactComponent } from '../contact/contact.component';
+
 
 @Component({
   selector: 'app-home',
@@ -20,56 +22,120 @@ import { ContactComponent } from '../contact/contact.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
+
+
 export class HomeComponent implements OnInit {
 
-  // ================= SIDEBAR STATE =================
+
+  // ONLY ONE
   menuOpen = false;
+
+  showBackToTop = false;
 
   constructor(
     private renderer: Renderer2,
     private el: ElementRef
   ) {}
 
-  // ================= DARK MODE INIT =================
+
+
+  // ONLY ONE
+  toggleMenu(): void {
+
+    this.menuOpen = !this.menuOpen;
+
+  }
+
+
+
+  // ONLY ONE
+  closeMenu(): void {
+
+    this.menuOpen = false;
+
+  }
+
+
+
+  scrollToSection(sectionId: string): void {
+
+    const element = document.getElementById(sectionId);
+
+
+    if (element) {
+
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+    }
+
+
+    this.closeMenu();
+
+  }
+
+
+
+  toggleDarkMode(): void {
+
+    const body = document.body;
+
+
+    if (body.classList.contains('dark-mode')) {
+
+      this.renderer.removeClass(
+        body,
+        'dark-mode'
+      );
+
+      localStorage.setItem(
+        'darkMode',
+        'disabled'
+      );
+
+
+    } else {
+
+
+      this.renderer.addClass(
+        body,
+        'dark-mode'
+      );
+
+
+      localStorage.setItem(
+        'darkMode',
+        'enabled'
+      );
+
+    }
+
+  }
+
+
+
   ngOnInit(): void {
+
     if (
-      typeof window !== 'undefined' &&
       localStorage.getItem('darkMode') === 'enabled'
     ) {
-      this.renderer.addClass(this.el.nativeElement, 'dark-mode');
-    }
-  }
 
-  // ================= SIDEBAR =================
-  toggleMenu(): void {
-    this.menuOpen = !this.menuOpen;
-  }
+      this.renderer.addClass(
+        document.body,
+        'dark-mode'
+      );
 
-  closeMenu(): void {
-    this.menuOpen = false;
-  }
-
-  // ================= NAVIGATION =================
-  scrollToSection(sectionId: string): void {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
     }
 
-    this.menuOpen = false;
-  }
+  // Back to top visibility
+  window.addEventListener('scroll', () => {
 
-  // ================= DARK MODE =================
-  toggleDarkMode(): void {
-    const isDark = this.el.nativeElement.classList.contains('dark-mode');
+    this.showBackToTop = window.scrollY > 300;
 
-    if (isDark) {
-      this.renderer.removeClass(this.el.nativeElement, 'dark-mode');
-      localStorage.setItem('darkMode', 'disabled');
-    } else {
-      this.renderer.addClass(this.el.nativeElement, 'dark-mode');
-      localStorage.setItem('darkMode', 'enabled');
-    }
+  });
+
+
   }
 
   // ================= BACK TO TOP =================
