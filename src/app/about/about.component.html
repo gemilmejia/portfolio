@@ -9,12 +9,44 @@
     </p>
     <h3>Technology Stack</h3>
     <ul>
-      <li><strong>Frontend / Web Development:</strong> HTML, CSS, Javascript, Angular, Bootstrap, Tailwind CSS, ReactJS</li>
+      <li><strong>Frontend / Web Development:</strong>
+
+      <div class="skills-section">
+        <span class="skill-badge" *ngFor="let skill of frontendSkills">
+          {{ skill }}
+        </span>
+      </div>
+    </li>
+
       <li>
-        <strong>Backend Development:</strong> C, C++, PHP, Python, Laravel, C#, ASP.Net, Rest API Basics, Node.js, Express.js
+        <strong>Backend Development:</strong>
+        <!-- C, C++, PHP, Python, Laravel, C#, ASP.Net, Rest API Basics, Node.js, Express.js -->
+        <div class="skills-section">
+          <span class="skill-badge" *ngFor="let skill of backendSkills">
+          {{ skill }}
+          </span>
+        </div>
       </li>
-      <li><strong>Databases:</strong> MySQL, SQL Server Management Studio, Figma, Adobe Photoshop, Adobe Premiere</li>
+
+      <li><strong>Databases:</strong> SQL, MySQL, SQL Server Management Studio
+
+        <div class="skills-section">
+          <span class="skill-badge" *ngFor="let skill of databaseSkills">
+          {{ skill }}
+          </span>
+        </div>
+      </li>
+
+
+      <li><strong>Other Tools:</strong> Git, Github, VS Code, Postman, Figma
+        <div class="skills-section">
+          <span class="skill-badge" *ngFor="let skill of otherToolsSkills">
+          {{ skill }}
+          </span>
+        </div>
+      </li>
       <!-- <li><strong>Other Tools:</strong> Firebase, GraphQL, Azure, Docker, Figma</li> -->
+
     </ul>
   </div>
 </section>
