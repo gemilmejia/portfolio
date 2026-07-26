@@ -27,6 +27,13 @@
   --btn-submit: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   --btn-submit-hover: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
   --error-color: #e74c3c;
+  --skill-bg: #111827;
+  --skill-text: #ffffff;
+  --skill-border: #111827;
+
+  --skill-bg-hover: #ffffff;
+  --skill-text-hover: #111827;
+  --skill-border-hover: #111827;
 
   /* Shared */
   --transition: all 0.3s ease;
@@ -58,6 +65,9 @@ body.dark-mode :host {
   --shadow-hover: rgba(0, 0, 0, 0.5);
   --btn-dark-bg: linear-gradient(135deg, #4a4a4a, #666666);
   --btn-dark-hover: linear-gradient(135deg, #666666, #888888);
+  --skill-bg: #ffffff;
+  --skill-text: #111827;
+  --skill-border: #ffffff;
 }
 
 /* Apply background to sections */
@@ -161,4 +171,34 @@ body.dark-mode .about-section li strong {
 }
 .about-section strong {
   color: var(--accent-blue);
+}
+
+
+// Skills Section //
+.skills-section {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.skill-badge {
+  padding: 8px 16px;
+  border: 1px solid var(--skill-border);
+  border-radius: 999px;
+  background: var(--skill-bg);
+  color: var(--skill-text);
+  font-size: 0.95rem;
+  font-weight:500;
+  transition: all 0.25s ease;
+  cursor: default;
+  width: fit-content;
+  display: inline-flex;
+}
+
+.skill-badge:hover {
+  background: var(--skill-hover-bg);
+  color: var(--skill-hover-text);
+  border-color: var(--skill-hover-border);
+  transform: translateY(-2px);
 }
