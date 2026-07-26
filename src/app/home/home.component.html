@@ -10,8 +10,11 @@
     </a>
 
     <!-- HAMBURGER -->
-    <button class="hamburger" (click)="toggleMenu()">
+    <!-- <button class="hamburger" (click)="toggleMenu()">
       <i class="fas fa-bars"></i>
+    </button> -->
+    <button class="hamburger" (click)="toggleMenu()">
+      ☰
     </button>
 
     <!-- DESKTOP LINKS -->
@@ -40,13 +43,22 @@
 
   </div>
 </nav>
+<!-- NAVBAR END -->
 
-<!-- SIDEBAR -->
-<div class="sidebar-overlay"
-     [class.active]="menuOpen"
-     (click)="closeMenu()"></div>
 
-<div class="sidebar" [class.open]="menuOpen">
+<!-- Overlay -->
+<div
+  class="drawer-overlay"
+  [class.active]="menuOpen"
+  (click)="closeMenu()">
+</div>
+
+<!-- Drawer -->
+<div class="drawer" [class.open]="menuOpen">
+
+  <button class="drawer-close" (click)="closeMenu()">
+    ✕
+  </button>
 
   <a (click)="scrollToSection('hero')">HOME</a>
   <a (click)="scrollToSection('about')">ABOUT</a>
@@ -54,7 +66,9 @@
   <a (click)="scrollToSection('design')">DESIGN</a>
   <a (click)="scrollToSection('contact')">CONTACT</a>
 
-  <div class="sidebar-bottom">
+
+
+  <div class="drawer-bottom">
 
     <a href="https://instagram.com" target="_blank">
       <i class="fab fa-instagram"></i>
@@ -71,14 +85,24 @@
   </div>
 </div>
 
-<!-- PAGE -->
+<!-- PAGE SECTIONS -->
+
 <app-hero></app-hero>
+
 <app-about></app-about>
+
 <app-projects></app-projects>
+
 <app-design></app-design>
+
 <app-contact></app-contact>
 
 <!-- BACK TO TOP -->
-<button class="back-to-top-btn" (click)="scrollToTop()">
+<button
+  class="back-to-top-btn test-btn"
+  [class.show]="showBackToTop"
+  (click)="scrollToTop()">
+
   <i class="fas fa-arrow-up"></i>
+
 </button>
