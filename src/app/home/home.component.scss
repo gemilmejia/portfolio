@@ -49,6 +49,10 @@
   text-decoration: none;
 }
 
+.navbar-links a:hover {
+  color: var(--accent-blue);
+}
+
 .navbar-brand small {
   color: var(--text-h1);
 }
@@ -87,20 +91,16 @@ body.dark-mode .navbar-brand small {
 
   transition: right 0.3s ease;
 
-  box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
 }
-
 
 .drawer.open {
   right: 0;
 }
 
-
-
 /* Drawer Links */
 
 .drawer a {
-
   display: block;
 
   color: var(--text-h1);
@@ -110,22 +110,15 @@ body.dark-mode .navbar-brand small {
   font-size: 18px;
 
   cursor: pointer;
-
 }
-
 
 .drawer a:hover {
-
   color: var(--accent-blue);
-
 }
-
-
 
 /* Close button */
 
 .drawer-close {
-
   align-self: flex-end;
 
   background: transparent;
@@ -137,35 +130,26 @@ body.dark-mode .navbar-brand small {
   font-size: 25px;
 
   cursor: pointer;
-
 }
-
-
 
 /* Bottom icons */
 
 .drawer-bottom {
-
   margin-top: auto;
 
   display: flex;
 
   gap: 20px;
-
 }
-
-
-
 
 /* Overlay */
 
 .drawer-overlay {
-
   position: fixed;
 
   inset: 0;
 
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 
   z-index: 10000;
 
@@ -174,17 +158,12 @@ body.dark-mode .navbar-brand small {
   visibility: hidden;
 
   transition: 0.3s;
-
 }
 
-
-
 .drawer-overlay.active {
-
   opacity: 1;
 
   visibility: visible;
-
 }
 // /* ================= SIDEBAR ================= */
 
@@ -253,11 +232,9 @@ body.dark-mode :host {
   --accent-blue: #2563eb;
 }
 
-
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
-
   .navbar-links,
   .navbar-right {
     display: none !important;
