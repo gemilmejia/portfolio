@@ -36,7 +36,7 @@
 }
 
 /* === DARK MODE OVERRIDES === */
-body.dark-mode :host {
+:host-context(body.dark-mode) {
   --bg-hero: #121212;
   --bg-about: #1a1a1a;
   --bg-projects: #242424;
@@ -129,17 +129,22 @@ body.dark-mode :host {
 /* PROJECTS GRID */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  min-width: 0;
 }
+
 .project-card {
   background: var(--bg-card);
   padding: 2rem;
   border-radius: var(--radius-card);
   box-shadow: 0 4px 15px var(--shadow-main);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   border: 1px solid var(--border-main);
+  min-width: 0;
 }
 .project-card:hover {
   transform: translateY(-5px);
@@ -196,82 +201,22 @@ body.dark-mode :host {
 
 .project-image {
   width: 100%;
-  height: 450px;
-  margin-bottom: 10px;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  margin-bottom: 1rem;
   overflow: hidden;
   border-radius: var(--radius-card);
+  background: var(--border-main);
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; // object-fit: cover;
   display: block;
 }
 
 /* === RESPONSIVE IMPROVEMENTS === */
-
-/* Small laptops */
-// @media (max-width: 1024px) {
-//   .projects-section {
-//     padding: 3rem 1.5rem;
-//   }
-
-//   .projects-section .container {
-//     padding: 1.5rem;
-//   }
-
-//   .projects-grid {
-//     grid-template-columns: repeat(2, minmax(0, 1fr));
-//     gap: 1.5rem;
-//   }
-
-//   .project-card {
-//     padding: 1.5rem;
-//   }
-
-//   .project-image {
-//     height: 320px;
-//   }
-// }
-
-// /* Tablets */
-// @media (max-width: 768px) {
-//   .projects-section {
-//     padding: 2.5rem 1rem;
-//     overflow-x: hidden;
-//   }
-
-//   .projects-section .container {
-//     padding: 1.25rem;
-//   }
-
-//   .projects-grid {
-//     grid-template-columns: repeat(2, minmax(0, 1fr));
-//     gap: 1.25rem;
-//     margin-top: 1.5rem;
-//   }
-
-//   .project-card {
-//     padding: 1.25rem;
-//   }
-
-//   .project-card h3 {
-//     font-size: 1.3rem;
-//   }
-
-//   .project-card p {
-//     font-size: 0.95rem;
-//   }
-
-//   .project-tech span {
-//     font-size: 0.8rem;
-//   }
-
-//   .project-image {
-//     height: 260px;
-//   }
-// }
 
 /* Mobile */
 @media (max-width: 480px) {
