@@ -150,12 +150,16 @@
   transform: translateY(-5px);
   box-shadow: 0 8px 25px var(--shadow-hover);
 }
+
 .project-card h3 {
   font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 1rem;
   color: var(--text-h1);
+  text-align: left;
 }
+
 .project-card p {
   font-size: 1rem;
   line-height: 1.6;
@@ -168,37 +172,68 @@
   gap: 0.5rem;
   justify-content: center;
 }
+
 .project-tech span {
-  background: var(--accent-blue);
-  color: #fff;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
+  background: transparent;
+  color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .project-links {
   margin-top: 15px;
 }
 
+/* PROJECT LINKS */
 .project-link {
-  display: inline-block;
-  padding: 8px 14px;
-  margin-right: 10px;
-  border-radius: 20px;
-  background: skyblue;
-  color: #000;
-  text-decoration: none;
-  font-size: 0.85rem;
-  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  gap: 0.4rem;
+
+  padding: 0.65rem 1.25rem;
+  margin-right: 0.5rem;
+  min-height: 44px;
+
+  border-radius: var(--radius-btn);
+  background: var(--accent-blue);
+  color: #ffffff;
+
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .project-link:hover {
-  background: #007bff;
-  color: #fff;
+  background: var(--accent-blue-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
+.project-link:focus-visible {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-link {
+    transition: none;
+  }
+
+  .project-link:hover {
+    transform: none;
+  }
+}
+
+/* PROJECT IMAGE */
 .project-image {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -212,8 +247,24 @@
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain; // object-fit: cover;
+  object-fit: contain;
   display: block;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.04);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .project-image img {
+    transition: none;
+  }
+
+  .project-card:hover .project-image img {
+    transform: none;
+  }
 }
 
 /* === RESPONSIVE IMPROVEMENTS === */
