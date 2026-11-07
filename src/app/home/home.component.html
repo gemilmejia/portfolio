@@ -11,27 +11,72 @@
     <!-- <button class="hamburger" (click)="toggleMenu()">
       <i class="fas fa-bars"></i>
     </button> -->
-    <button #hamburgerButton class="hamburger" (click)="toggleMenu()">
-      ☰
+    <button
+      #hamburgerButton
+      type="button"
+      class="hamburger"
+      aria-label="Navigation menu"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="mobile-navigation"
+      (click)="toggleMenu()"
+    >
+      <span aria-hidden="true">☰</span>
     </button>
 
     <!-- DESKTOP LINKS -->
     <div class="navbar-links">
-      <a (click)="scrollToSection('hero')">HOME</a>
-      <a (click)="scrollToSection('about')">ABOUT</a>
-      <a (click)="scrollToSection('projects')">PROJECTS</a>
-      <a (click)="scrollToSection('design')">DESIGN</a>
-      <a (click)="scrollToSection('contact')">CONTACT</a>
+      <a
+        href="#hero"
+        (click)="scrollToSection('hero'); $event.preventDefault()"
+      >
+        HOME
+      </a>
+      <a
+        href="#about"
+        (click)="scrollToSection('about'); $event.preventDefault()"
+      >
+        ABOUT
+      </a>
+      <a
+        href="#projects"
+        (click)="scrollToSection('projects'); $event.preventDefault()"
+      >
+        PROJECTS
+      </a>
+      <a
+        href="#design"
+        (click)="scrollToSection('design'); $event.preventDefault()"
+      >
+        DESIGN
+      </a>
+      <a
+        href="#contact"
+        (click)="scrollToSection('contact'); $event.preventDefault()"
+      >
+        CONTACT
+      </a>
     </div>
 
     <!-- RIGHT ICONS -->
     <div class="navbar-right">
-      <a href="https://instagram.com" target="_blank" class="social-icon">
-        <i class="fab fa-instagram"></i>
+      <a
+        href="https://www.instagram.com/mejiagemil_/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-icon"
+        aria-label="Instagram"
+      >
+        <i class="fab fa-instagram" aria-hidden="true"></i>
       </a>
 
-      <a href="https://linkedin.com" target="_blank" class="social-icon">
-        <i class="fab fa-linkedin"></i>
+      <a
+        href="https://www.linkedin.com/in/gemil-m-365346217/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-icon"
+        aria-label="LinkedIn"
+      >
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
       </a>
 
       <button
@@ -63,22 +108,65 @@
 ></div>
 
 <!-- Drawer -->
-<div class="drawer" [class.open]="menuOpen" [inert]="!menuOpen">
-  <button class="drawer-close" (click)="closeMenu()">✕</button>
+<div
+  id="mobile-navigation"
+  class="drawer"
+  [class.open]="menuOpen"
+  [inert]="!menuOpen"
+>
+  <button
+    type="button"
+    class="drawer-close"
+    aria-label="Close navigation menu"
+    (click)="closeMenu()"
+  >
+    <span aria-hidden="true">✕</span>
+  </button>
 
-  <a (click)="scrollToSection('hero')">HOME</a>
-  <a (click)="scrollToSection('about')">ABOUT</a>
-  <a (click)="scrollToSection('projects')">PROJECTS</a>
-  <a (click)="scrollToSection('design')">DESIGN</a>
-  <a (click)="scrollToSection('contact')">CONTACT</a>
+  <a href="#hero" (click)="scrollToSection('hero'); $event.preventDefault()">
+    HOME
+  </a>
+  <a href="#about" (click)="scrollToSection('about'); $event.preventDefault()">
+    ABOUT
+  </a>
+  <a
+    href="#projects"
+    (click)="scrollToSection('projects'); $event.preventDefault()"
+  >
+    PROJECTS
+  </a>
+  <a
+    href="#design"
+    (click)="scrollToSection('design'); $event.preventDefault()"
+  >
+    DESIGN
+  </a>
+  <a
+    href="#contact"
+    (click)="scrollToSection('contact'); $event.preventDefault()"
+  >
+    CONTACT
+  </a>
 
   <div class="drawer-bottom">
-    <a href="https://instagram.com" target="_blank">
-      <i class="fab fa-instagram"></i>
+    <a
+      href="https://www.instagram.com/mejiagemil_/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="Instagram"
+    >
+      <i class="fab fa-instagram" aria-hidden="true"></i>
     </a>
 
-    <a href="https://linkedin.com" target="_blank">
-      <i class="fab fa-linkedin"></i>
+    <a
+      href="https://www.linkedin.com/in/gemil-m-365346217/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="LinkedIn"
+    >
+      <i class="fab fa-linkedin" aria-hidden="true"></i>
     </a>
 
     <button
