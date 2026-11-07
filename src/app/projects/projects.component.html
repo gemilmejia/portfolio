@@ -1,199 +1,51 @@
 <section id="projects" class="projects-section">
   <div class="container">
     <h1>My Projects</h1>
+
     <p>
       Here are some of the projects I've worked on, showcasing my skills in web
       development and software solutions.
     </p>
+
+    <!-- Dynamic project cards -->
     <div class="projects-grid">
-      <!-- Angular To-Do List Project -->
-      <div class="project-card">
-        <div class="project-image">
-          <img
-            src="assets/images/angular-todo-list-optimized.png"
-            alt="Screenshot of Angular To-Do List application"
-            loading="lazy"
-          />
-        </div>
+      @for (project of projects; track project.id) {
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              [src]="project.image"
+              [alt]="project.imageAlt"
+              loading="lazy"
+            />
+          </div>
 
-        <h3>Angular To-Do List</h3>
+          <h3>{{ project.title }}</h3>
 
-        <p>
-          A responsive task management application built with Angular 19 and
-          TypeScript. Supports task creation, editing, completion, searching,
-          filtering, sorting, and persistent local storage.
-        </p>
+          @for (paragraph of project.description; track $index) {
+            <p>{{ paragraph }}</p>
+          }
 
-        <!-- <p>
-          Integrated with a REST API and RxJS for asynchronous data handling.
-          Validated with 192 automated Jasmine/Karma tests and deployed through
-          GitHub Actions.
-        </p> -->
+          <div class="project-tech">
+            @for (technology of project.technologies; track technology) {
+              <span>{{ technology }}</span>
+            }
+          </div>
 
-        <p>
-          Integrated with REST APIs and RxJS for asynchronous data handling,
-          with 192 automated Jasmine/Karma tests to ensure application
-          reliability.
-        </p>
-
-        <div class="project-tech">
-          <span>Angular 19</span>
-          <span>TypeScript</span>
-          <span>RxJS</span>
-          <span>REST API</span>
-          <span>Jasmine/Karma</span>
-          <span>GitHub Actions</span>
+          <div class="project-links">
+            @for (link of project.links; track link.url) {
+              <a
+                [href]="link.url"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="link.ariaLabel"
+              >
+                {{ link.label }}
+              </a>
+            }
+          </div>
         </div>
-
-        <div class="project-links">
-          <a
-            href="https://gemilmejia.github.io/todo-list/"
-            class="project-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View Angular To-Do List live demo"
-          >
-            Live Demo
-          </a>
-
-          <a
-            href="https://github.com/gemilmejia/todo-list"
-            class="project-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View Angular To-Do List source code on GitHub"
-          >
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- TUP Compass Website Project-->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/images/TUPCompass.jpg" alt="TUP Compass" />
-        </div>
-        <h3>TUP Compass Website</h3>
-        <p>
-          A responsive organizational website for TUP COMPASS, built using HTML,
-          CSS, JavaScript, PHP, and MySQL, designed to deliver accessible
-          information and a seamless user experience across devices.
-        </p>
-        <div class="project-tech">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>Javascript</span>
-          <span>PHP</span>
-          <span>MySQL</span>
-        </div>
-        <div class="project-links">
-          <a
-            href="https://www.youtube.com/watch?v=iLaBG1PubCc"
-            class="project-link"
-            target="_blank"
-            >Video Demo</a
-          >
-          <!-- <a
-            href="https://github.com/gemilmejia/tupcompasswebsite"
-            class="project-link"
-            >GitHub</a
-          > -->
-        </div>
-      </div>
-
-      <!-- <div class="project-card">
-        <div class="project-image">
-          <img src="assets/images/project2.jpg" alt="E-commerce Platform" />
-        </div>
-        <h3>E-commerce Platform</h3>
-        <p>A full-stack e-commerce solution with user authentication, product management, shopping cart functionality, and payment integration using Stripe. Features include product search, filtering, and order tracking.</p>
-        <div class="project-tech">
-          <span>React</span>
-          <span>Node.js</span>
-          <span>MongoDB</span>
-          <span>Express</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Live Demo</a>
-          <a href="#" class="project-link">GitHub</a>
-        </div>
-      </div>
-
-
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/images/project3.jpg" alt="Task Management App" />
-        </div>
-        <h3>Task Management App</h3>
-        <p>A collaborative task management application with real-time updates, team collaboration features, and drag-and-drop functionality. Includes user authentication, project boards, and progress tracking.</p>
-        <div class="project-tech">
-          <span>Vue.js</span>
-          <span>Firebase</span>
-          <span>Tailwind CSS</span>
-          <span>Vuex</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Live Demo</a>
-          <a href="#" class="project-link">GitHub</a>
-        </div>
-      </div>
-
-
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/images/project4.jpg" alt="Weather Dashboard" />
-        </div>
-        <h3>Weather Dashboard</h3>
-        <p>An interactive weather dashboard that displays current weather conditions and forecasts for multiple cities. Built with JavaScript, it integrates with a weather API to provide real-time data visualization and location-based weather updates.</p>
-        <div class="project-tech">
-          <span>JavaScript</span>
-          <span>HTML5</span>
-          <span>CSS3</span>
-          <span>OpenWeatherMap API</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Live Demo</a>
-          <a href="#" class="project-link">GitHub</a>
-        </div>
-      </div>
-
-
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/images/project5.jpg" alt="Blog Platform" />
-        </div>
-        <h3>Blog Platform</h3>
-        <p>A full-featured blog platform with user authentication, content management system, and commenting functionality. Includes rich text editing, category organization, and SEO optimization for better search engine visibility.</p>
-        <div class="project-tech">
-          <span>PHP</span>
-          <span>Laravel</span>
-          <span>MySQL</span>
-          <span>Bootstrap</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Live Demo</a>
-          <a href="#" class="project-link">GitHub</a>
-        </div>
-      </div>
-
-
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/images/project6.jpg" alt="Data Visualization Tool" />
-        </div>
-        <h3>Data Visualization Tool</h3>
-        <p>A web-based data visualization tool that allows users to upload CSV files and create interactive charts and graphs. Features include multiple chart types, data filtering, and export functionality for presentations and reports.</p>
-        <div class="project-tech">
-          <span>Python</span>
-          <span>Flask</span>
-          <span>D3.js</span>
-          <span>Pandas</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">Live Demo</a>
-          <a href="#" class="project-link">GitHub</a>
-        </div>
-      </div> -->
+      }
     </div>
   </div>
 </section>
