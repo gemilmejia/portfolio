@@ -1,6 +1,6 @@
 <section id="projects" class="projects-section">
   <div class="container">
-    <h1>My Projects</h1>
+    <h2>My Projects</h2>
 
     <p>
       Here are some of the projects I've worked on, showcasing my skills in web
@@ -10,7 +10,7 @@
     <!-- Dynamic project cards -->
     <div class="projects-grid">
       @for (project of projects; track project.id) {
-        <div class="project-card">
+        <article class="project-card">
           <div class="project-image">
             <img
               [src]="project.image"
@@ -44,7 +44,7 @@
               </a>
             }
           </div>
-        </div>
+        </article>
       }
     </div>
   </div>
