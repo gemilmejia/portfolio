@@ -6,6 +6,7 @@ import {
   PLATFORM_ID,
   inject,
   OnDestroy,
+  ViewChild,
 } from '@angular/core';
 
 import { CommonModule, isPlatformBrowser } from '@angular/common';
@@ -40,6 +41,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
   private removeScrollListener?: () => void;
 
+  @ViewChild('hamburgerButton')
+  private hamburgerButton?: ElementRef<HTMLButtonElement>;
+
   // ================= CONSTRUCTOR =================
   constructor(
     // Inject the Renderer2 and ElementRef for DOM manipulation
@@ -53,8 +57,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   // ONLY ONE
-  closeMenu(): void {
+  closeMenu(restoreFocus = true): void {
+    const wasOpen = this.menuOpen;
+
     this.menuOpen = false;
+
+    if (restoreFocus && wasOpen && isPlatformBrowser(this.platformId)) {
+      this.hamburgerButton?.nativeElement.focus();
+    }
   }
 
   scrollToSection(sectionId: string): void {
@@ -71,7 +81,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       });
     }
 
-    this.closeMenu();
+    this.closeMenu(false);
   }
 
   toggleDarkMode(): void {

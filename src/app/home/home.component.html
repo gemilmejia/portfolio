@@ -11,7 +11,9 @@
     <!-- <button class="hamburger" (click)="toggleMenu()">
       <i class="fas fa-bars"></i>
     </button> -->
-    <button class="hamburger" (click)="toggleMenu()">☰</button>
+    <button #hamburgerButton class="hamburger" (click)="toggleMenu()">
+      ☰
+    </button>
 
     <!-- DESKTOP LINKS -->
     <div class="navbar-links">
@@ -61,7 +63,7 @@
 ></div>
 
 <!-- Drawer -->
-<div class="drawer" [class.open]="menuOpen">
+<div class="drawer" [class.open]="menuOpen" [inert]="!menuOpen">
   <button class="drawer-close" (click)="closeMenu()">✕</button>
 
   <a (click)="scrollToSection('hero')">HOME</a>

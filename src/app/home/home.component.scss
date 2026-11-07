@@ -57,6 +57,21 @@
   color: var(--text-h1);
 }
 
+.navbar-brand {
+  color: var(--text-h1);
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus-visible {
+  color: var(--text-h1);
+}
+
+.navbar-brand:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 body.dark-mode .navbar-brand small {
   color: #ffffff !important;
 }

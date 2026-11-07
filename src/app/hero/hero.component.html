@@ -3,21 +3,20 @@
     <!-- LEFT: TEXT -->
     <div class="hero-text">
       <h1 class="fw-bold">
-         Hello, I'm Gemil!<!-- Software Developer <span class="fw-normal">Developer</span> -->
+        Hello, I'm Gemil!<!-- Software Developer <span class="fw-normal">Developer</span> -->
       </h1>
 
-      <h4 class="fw-bold mt-2">
-       <!-- Creating intuitive, <span class="fw-normal">responsive user interfaces while continuously expanding my </span>frontend and backend <span class="fw-normal">development skills.</span><span class="fw-normal">while continuously expanding my frontend and backend skills.</span> -->
-      </h4>
+      <p class="hero-role fw-bold mt-2">Frontend Developer</p>
 
       <p class="mt-3">
-        <!-- A 25-year-old <strong>Programmer</strong> based in Manila, Philippines. -->
-        I'm a <strong>Software Developer</strong> based in Manila, Philippines. <!--I enjoy designing clean, user-friendly interfaces and building responsive web applications. I have experience building responsive web applications, a solid understanding of backend fundamentals, and continue expanding my skills through real-world projects. -->
+        I build responsive, user-friendly web applications using
+        <strong>Angular, TypeScript, and modern web technologies</strong>. I
+        focus on creating clean interfaces and practical solutions that deliver
+        a smooth user experience.
       </p>
       <!-- Angular • TypeScript • JavaScript • HTML • CSS • Bootstrap
       • MySQL • PHP • Git • Node.js • Express.js • RESTful APIs • JSON
       • AJAX • jQuery • React.js • Next.js • Tailwind CSS • SASS/SCSS • SQL Server Management Studio • Figma • Adobe Photoshop • Adobe Premiere -->
-
 
       <!-- <div class="skills-section">
         <div class="skill-badge" *ngFor="let skill of skills">
@@ -26,29 +25,35 @@
       </div> -->
 
       <div class="mt-4 hero-buttons">
-        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#chat/dm/sy1rzUAAAAE"
-            target="_blank"
-            class="btn btn-danger">
-          <i class="bi bi-chat-left-dots"></i>Get in Touch
+        <a
+          href="mailto:gemilmejia65@gmail.com?subject=Portfolio%20Inquiry"
+          class="btn btn-danger"
+        >
+          <i class="bi bi-envelope" aria-hidden="true"></i>
+          Get in Touch
         </a>
 
-      <!-- <div class="mt-4 hero-buttons">
+        <!-- <div class="mt-4 hero-buttons">
         <button class="btn btn-dark">
           <i class="bi bi-discord"></i> Get in Touch
         </button> -->
         <a
           class="btn btn-light border"
-          href="#"
+          href="#projects"
           (click)="onScrollToSection('projects'); $event.preventDefault()"
         >
-          <i class="bi bi-calendar-event"></i> View My Work
+          <i class="bi bi-calendar-event" aria-hidden="true"></i>
+          View My Work
         </a>
       </div>
     </div>
 
     <!-- RIGHT: IMAGE -->
     <div class="hero-image">
-      <img src="assets/images/profile.jpg" alt="Profile" />
+      <img
+        src="assets/images/profile.jpg"
+        alt="Portrait of Gemil Mejia, Frontend Developer"
+      />
     </div>
   </div>
 </section>
