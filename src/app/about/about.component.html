@@ -1,53 +1,59 @@
-<section id="about" class="about-section">
+<section id="about" class="about-section" aria-labelledby="about-heading">
   <div class="container">
-    <h1>About Me</h1>
+    <h2 id="about-heading">About Me</h2>
     <p>
-      Hello! I'm a Software Developer based in Manila, Philippines, passionate about building responsive, user-friendly web applications. I enjoy creating intuitive frontend experiences while developing reliable backend solutions using modern web technologies. My background in technical support has strengthened my problem-solving skills and attention to detail, and I continue expanding my skills through real-world projects and continuous learning.
+      I'm an aspiring Frontend Developer based in the Philippines, with a
+      background in IT Support and hands-on experience building web applications
+      using Angular, TypeScript, HTML, and CSS. My technical support experience
+      has strengthened my troubleshooting, communication, and problem-solving
+      skills. Through personal development projects, I've been building
+      responsive user interfaces, integrating REST APIs, and improving my
+      understanding of modern frontend development.
     </p>
     <p>
-      Outside of development, I enjoy exploring new technologies, building personal projects, and continuously learning new tools and best practices to improve as a software developer.
+      I enjoy turning ideas into practical applications and refining them
+      through testing, feedback, and continuous improvement. I'm especially
+      interested in creating accessible, maintainable interfaces that make
+      everyday tasks easier for users.
     </p>
     <h3>Technology Stack</h3>
     <ul>
-      <li><strong>Frontend / Web Development:</strong>
+      <li>
+        <strong>Frontend / Web Development:</strong>
 
-      <div class="skills-section">
-        <span class="skill-badge" *ngFor="let skill of frontendSkills">
-          {{ skill }}
-        </span>
-      </div>
-    </li>
+        <div class="skills-section">
+          <span class="skill-badge" *ngFor="let skill of frontendSkills">
+            {{ skill }}
+          </span>
+        </div>
+      </li>
 
       <li>
         <strong>Backend Development:</strong>
-        <!-- C, C++, PHP, Python, Laravel, C#, ASP.Net, Rest API Basics, Node.js, Express.js -->
         <div class="skills-section">
           <span class="skill-badge" *ngFor="let skill of backendSkills">
-          {{ skill }}
+            {{ skill }}
           </span>
         </div>
       </li>
 
-      <li><strong>Databases:</strong>
-        <br>
+      <li>
+        <strong>Databases:</strong>
         <div class="skills-section">
           <span class="skill-badge" *ngFor="let skill of databaseSkills">
-          {{ skill }}
+            {{ skill }}
           </span>
         </div>
       </li>
 
-
-      <li><strong>Other Tools:</strong>
-        <br>
+      <li>
+        <strong>Other Tools:</strong>
         <div class="skills-section">
           <span class="skill-badge" *ngFor="let skill of otherToolsSkills">
-          {{ skill }}
+            {{ skill }}
           </span>
         </div>
       </li>
-      <!-- <li><strong>Other Tools:</strong> Firebase, GraphQL, Azure, Docker, Figma</li> -->
-
     </ul>
   </div>
 </section>
