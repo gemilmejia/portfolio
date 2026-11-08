@@ -9,41 +9,37 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent {
+  frontendSkills: string[] = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'Angular',
+    'Bootstrap',
+    'Tailwind CSS',
+    'React.js (Basic)',
+    'REST API Basics',
+  ];
 
-frontendSkills: string[] = [
-  'HTML',
-  'CSS',
-  'Javascript',
-  'Angular',
-  'Bootstrap',
-  'Tailwind CSS',
-  'ReactJS'
-];
+  backendSkills: string[] = [
+    'C',
+    'C++',
+    'PHP',
+    'Python',
+    'Laravel',
+    'C#',
+    'ASP.NET',
+    'Node.js',
+    'Express.js',
+  ];
 
-backendSkills: string[] = [
-  'C',
-  'C++',
-  'PHP',
-  'Python',
-  'Laravel',
-  'C#',
-  'ASP.NET',
-  'RestAPI Basics',
-  'Node.js',
-  'Express.js'
-];
+  databaseSkills: string[] = ['SQL', 'MySQL', 'Microsoft SQL Server'];
 
-databaseSkills: string[] = [
-  'SQL',
-  'MySQL',
-  'SQL Server Management Studio',
-];
-
-otherToolsSkills: string[] = [
-  'Git',
-  'GitHub',
-  'Figma',
-  'Adobe Photoshop',
-  'Adobe Premiere'
-];
+  otherToolsSkills: string[] = [
+    'Git',
+    'GitHub',
+    'SQL Server Management Studio',
+    'Figma',
+    'Adobe Photoshop',
+    'Adobe Premiere',
+  ];
 }
