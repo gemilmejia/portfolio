@@ -17,6 +17,7 @@ export class ProjectsComponent {
       description: [
         'A responsive task management application built with Angular 19 and TypeScript. Supports task creation, editing, completion, searching, filtering, sorting, and persistent local storage.',
         'Integrated with REST APIs and RxJS for asynchronous data handling, with 192 automated Jasmine/Karma tests to ensure application reliability.',
+        'One development challenge was handling failed API requests gracefully. I practiced using RxJS error handling and displaying loading and error states so users receive clearer feedback.',
       ],
       image: 'assets/images/angular-todo-list-optimized.png',
       imageAlt: 'Screenshot of Angular To-Do List application',
@@ -45,7 +46,8 @@ export class ProjectsComponent {
       id: 2,
       title: 'TUP Compass Website',
       description: [
-        'A responsive organizational website for TUP COMPASS, built using HTML, CSS, JavaScript, PHP, and MySQL, designed to deliver accessible information and a seamless user experience across devices.',
+        'A responsive website developed for TUP COMPASS to present organizational information in a clear, accessible, and mobile-friendly format.',
+        'One development challenge was adapting the website layout for different screen sizes. I worked on improving the responsive design so visitors could navigate and read content on both mobile and desktop devices.',
       ],
       image: 'assets/images/TUPCompass.jpg',
       imageAlt: 'Screenshot of TUP Compass Website',
